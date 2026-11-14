@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+  }
+}
+
+/* Headings & Display Elements */
+h1, h2, h3, h4, h5, h6,
+[class*="font-headline"],
+[class*="font-display"],
+.font-serif,
+[class*="font-serif"] {
+  font-family: 'Montserrat', 'Playfair Display', serif !important;
+  font-weight: 700;
+}
+
+/* Paragraphs & body copy */
+p, [class*="font-body"], .font-body-md, .font-body-lg, .font-body-sm {
+  font-family: 'Lato', 'Manrope', sans-serif !important;
+}
+
+/* UI Elements, navigation links, buttons, badges, metadata, stat counters */
+button, a, input, select, textarea,
+[class*="font-label"],
+[class*="tracking-wider"],
+[class*="tracking-widest"],
+[class*="uppercase"],
+[class*="text-xs"],
+.font-mono,
+[class*="font-title"] {
+  font-family: 'Geist', 'Manrope', sans-serif !important;
+}
+
+/* Hide scrollbar while preserving functionality */
+::-webkit-scrollbar {
+  display: none;
+}
