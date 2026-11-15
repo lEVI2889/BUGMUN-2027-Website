@@ -15,9 +15,144 @@ export const LegacyPage: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       {/* =========================================================================
-          SECTION A: LEGACY HERO SECTION
+          SECTION 1: LEGACY HERO SECTION
+          Mobile: Approved Stitch Mobile Legacy Hero (Classification strip, Plate 01, Fast scroller)
+          Desktop: Approved Desktop Hero (Curated frame, radial gradient, chronology sidebar)
           ========================================================================= */}
-      <section className="relative w-full bg-surface-container-lowest overflow-hidden py-space-xl">
+
+      {/* MOBILE LEGACY HERO (lg:hidden) */}
+      <section className="px-gutter pt-space-md pb-space-lg flex flex-col gap-space-md bg-surface lg:hidden">
+        {/* Archival Classification Protocol Strip */}
+        <div className="bg-surface-container-low rounded-xl p-space-md flex flex-col gap-space-xs shadow-sm">
+          <div className="flex items-center justify-between">
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest flex items-center gap-1 font-bold">
+              <span className="material-symbols-outlined text-[14px]">lock_open</span>
+              DECLASSIFIED PUBLIC RECORD
+            </span>
+            <span className="font-label-protocol text-label-protocol bg-secondary-container/20 text-on-secondary-container px-2 py-0.5 rounded-full font-bold">
+              SERIES 2014–2027
+            </span>
+          </div>
+          <p className="font-label-protocol text-label-protocol text-on-surface-variant font-medium">
+            ARCHIVES &amp; ANNALS // BUGMUN HISTORICAL REGISTRY // RECORD #904-B
+          </p>
+        </div>
+
+        {/* Editorial Typography Title */}
+        <div className="flex flex-col gap-space-xs">
+          <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+            Commemorative Retrospective
+          </span>
+          <h1 className="font-headline-lg-mobile text-headline-lg-mobile text-primary leading-tight tracking-tight font-bold">
+            The Legacy of BUGMUN
+          </h1>
+          <p className="font-body-md text-body-md text-on-surface-variant italic">
+            A Decade of Multilateral Dialogue, Youth Leadership, and Diplomatic Excellence (2014–2027)
+          </p>
+        </div>
+
+        {/* Curatorial Note */}
+        <div className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-xs">
+          <div className="flex items-center gap-space-xs text-primary">
+            <span className="material-symbols-outlined text-[20px] text-secondary">history_edu</span>
+            <span className="font-label-md text-label-md uppercase text-primary font-bold">Curatorial Statement</span>
+          </div>
+          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Preserved by the International Affairs &amp; Business Conference (IABC) at BRAC University. These annals document the collective intellectual capital, emergency treaties, and historic resolutions formulated by young diplomats over a formative decade in South Asian collegiate statecraft.
+          </p>
+        </div>
+
+        {/* Featured Archival Plate 01 */}
+        <div
+          className="relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-md flex flex-col cursor-pointer active:scale-[0.99] transition-transform"
+          onClick={() => setActivePlate(GALLERY_PLATES[0])}
+        >
+          <div className="relative w-full aspect-[4/3] bg-surface-container">
+            <img
+              className="w-full h-full object-cover"
+              alt="BUGMUN 2014 Archival Plenary"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTTQwClM0-1qJsR1FVt95uYaBdDfY5M4hi2icK-3eDQNmJeIMsi_sr0FC4kncXDDA74AHKu3pQTSHU-iT5ZqFubk--xsMw1l9Tr9vFr33TePOPnsgfFqz2XST_LeNs55w0wXrzB1RE-jQuKSoP6-q-JKzj4E05chRbBTaKwBxWyiR5OR_Gr9K-PxRiZxDTOdrNctR9jepMLBaDNAeMiDimeCTy4gIcCoXCpIJVdis"
+            />
+            <div className="absolute top-3 left-3 bg-tertiary/85 backdrop-blur-md px-2.5 py-1 rounded-md text-on-tertiary flex items-center gap-1.5 shadow-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+              <span className="font-label-protocol text-label-protocol tracking-wider uppercase font-semibold">Archival Plate 01</span>
+            </div>
+            <div className="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-md text-primary font-label-protocol text-label-protocol font-bold">
+              HISTORIC FIRST ASSEMBLY
+            </div>
+          </div>
+          <div className="p-space-md flex flex-col gap-space-xs bg-surface-container-lowest">
+            <span className="font-title-md text-title-md text-primary font-bold">Session Plenary 2014</span>
+            <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+              Opening of the inaugural BUGMUN plenary at BRAC University, setting the precedent for nationwide model diplomacy.
+            </p>
+            <div className="pt-space-xs flex items-center justify-between text-outline border-t border-outline-variant/20 mt-1">
+              <span className="font-label-protocol text-label-protocol tracking-wider uppercase">CATALOG NO. BGM-ARC-1401</span>
+              <span className="font-label-protocol text-label-protocol text-secondary font-semibold">AUTHENTICATED IABC</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Quick Chronology Horizontal Scroller */}
+        <div className="flex flex-col gap-space-xs mt-space-xs">
+          <span className="font-label-protocol text-label-protocol text-outline uppercase tracking-wider font-semibold">
+            Fast Chronology Directory
+          </span>
+          <div className="flex gap-space-sm overflow-x-auto pb-2 -mx-gutter px-gutter scrollbar-none">
+            <a
+              className="flex-shrink-0 bg-surface-container-low hover:bg-surface-container px-space-md py-space-sm rounded-xl flex items-center gap-space-xs shadow-sm transition-colors"
+              href="#edition-2014"
+            >
+              <span className="w-6 h-6 rounded-full bg-primary text-on-primary font-label-protocol text-label-protocol flex items-center justify-center font-bold">
+                01
+              </span>
+              <div className="flex flex-col">
+                <span className="font-label-md text-label-md text-primary font-bold leading-none">BUGMUN 2014</span>
+                <span className="font-label-protocol text-label-protocol text-on-surface-variant">The Beginning</span>
+              </div>
+            </a>
+            <a
+              className="flex-shrink-0 bg-surface-container-low hover:bg-surface-container px-space-md py-space-sm rounded-xl flex items-center gap-space-xs shadow-sm transition-colors"
+              href="#edition-2016"
+            >
+              <span className="w-6 h-6 rounded-full bg-primary text-on-primary font-label-protocol text-label-protocol flex items-center justify-center font-bold">
+                02
+              </span>
+              <div className="flex flex-col">
+                <span className="font-label-md text-label-md text-primary font-bold leading-none">BUGMUN 2016</span>
+                <span className="font-label-protocol text-label-protocol text-on-surface-variant">Foundation</span>
+              </div>
+            </a>
+            <a
+              className="flex-shrink-0 bg-surface-container-low hover:bg-surface-container px-space-md py-space-sm rounded-xl flex items-center gap-space-xs shadow-sm transition-colors"
+              href="#edition-2017"
+            >
+              <span className="w-6 h-6 rounded-full bg-primary text-on-primary font-label-protocol text-label-protocol flex items-center justify-center font-bold">
+                03
+              </span>
+              <div className="flex flex-col">
+                <span className="font-label-md text-label-md text-primary font-bold leading-none">BUGMUN 2017</span>
+                <span className="font-label-protocol text-label-protocol text-on-surface-variant">Expansion</span>
+              </div>
+            </a>
+            <a
+              className="flex-shrink-0 bg-surface-container-low hover:bg-surface-container px-space-md py-space-sm rounded-xl flex items-center gap-space-xs shadow-sm transition-colors"
+              href="#edition-2020"
+            >
+              <span className="w-6 h-6 rounded-full bg-primary text-on-primary font-label-protocol text-label-protocol flex items-center justify-center font-bold">
+                04
+              </span>
+              <div className="flex flex-col">
+                <span className="font-label-md text-label-md text-primary font-bold leading-none">BUGMUN 2020</span>
+                <span className="font-label-protocol text-label-protocol text-on-surface-variant">Residential TARC</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP LEGACY HERO (hidden lg:block) */}
+      <section className="hidden lg:block relative w-full bg-surface-container-lowest overflow-hidden py-space-xl">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(80,196,253,0.12),rgba(255,255,255,0))] pointer-events-none"></div>
         <div className="max-w-[1240px] mx-auto px-margin relative z-10">
           {/* Breadcrumb & Diplomatic Metadata Header */}
@@ -29,26 +164,26 @@ export const LegacyPage: React.FC = () => {
               <span>/</span>
               <span className="text-primary font-bold">Series 2014–2027</span>
             </div>
-            <div className="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-1 rounded-full text-on-surface-variant font-label-protocol text-label-protocol uppercase tracking-wider">
+            <div className="flex items-center gap-space-sm bg-surface-container-low px-space-md py-1 rounded-full text-on-surface-variant font-label-protocol text-label-protocol uppercase tracking-wider">
               <span className="inline-block w-2 h-2 rounded-full bg-secondary-container"></span>
               <span>Exhibition Protocol: Historical Archive Series</span>
             </div>
           </div>
 
           {/* Main Headline Typography Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-end mb-space-xl">
-            <div className="lg:col-span-8 flex flex-col gap-space-sm">
+          <div className="grid grid-cols-12 gap-gutter items-end mb-space-xl">
+            <div className="col-span-8 flex flex-col gap-space-sm">
               <span className="font-label-protocol text-label-protocol uppercase tracking-[0.2em] text-secondary font-bold">
                 BRAC University Model United Nations Archive
               </span>
-              <h1 className="font-headline-lg text-headline-lg text-primary leading-tight tracking-tight">
+              <h1 className="font-headline-lg text-headline-lg text-primary leading-tight tracking-tight font-bold">
                 The Legacy of BUGMUN
               </h1>
               <p className="font-title-md text-title-md text-primary-container italic font-serif">
                 A Decade of Multilateral Dialogue, Leadership, and Diplomatic Excellence (2014–2027)
               </p>
             </div>
-            <div className="lg:col-span-4 flex flex-col justify-end">
+            <div className="col-span-4 flex flex-col justify-end">
               <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
                 Curated under the custody of the International Association of Business Communicators (IABC), BRAC University. Preserving sovereign collegiate parliamentary procedure and visionary youth statecraft in South Asia.
               </p>
@@ -56,11 +191,14 @@ export const LegacyPage: React.FC = () => {
           </div>
 
           {/* Hero Visual Composition with Curated Frame */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div className="grid grid-cols-12 gap-gutter items-center">
             {/* Main Archival Centerpiece (8 cols) */}
-            <div className="lg:col-span-8 relative">
+            <div className="col-span-8 relative">
               <div className="bg-surface-container rounded-xl overflow-hidden shadow-xl p-space-sm">
-                <div className="relative w-full h-[460px] rounded-lg overflow-hidden group">
+                <div
+                  className="relative w-full h-[460px] rounded-lg overflow-hidden group cursor-pointer"
+                  onClick={() => setActivePlate(GALLERY_PLATES[0])}
+                >
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                     alt="BUGMUN 2014 Archival Plenary"
@@ -68,7 +206,7 @@ export const LegacyPage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                   {/* Bottom Scrim Citation Overlay */}
-                  <div className="absolute bottom-0 left-0 right-0 p-space-lg text-on-primary flex flex-col md:flex-row items-start md:items-end justify-between gap-space-md">
+                  <div className="absolute bottom-0 left-0 right-0 p-space-lg text-on-primary flex flex-row items-end justify-between gap-space-md">
                     <div>
                       <div className="flex items-center gap-2 mb-1">
                         <span className="bg-secondary text-on-secondary font-label-protocol text-label-protocol px-2 py-0.5 rounded uppercase font-semibold">
@@ -78,7 +216,7 @@ export const LegacyPage: React.FC = () => {
                           Session Plenary 2014
                         </span>
                       </div>
-                      <h3 className="font-headline-sm text-headline-sm font-serif text-white">
+                      <h3 className="font-headline-sm text-headline-sm font-serif text-white font-bold">
                         Opening of the Historic First Assembly
                       </h3>
                       <p className="font-body-sm text-body-sm text-surface-variant max-w-lg mt-1 leading-relaxed">
@@ -96,7 +234,7 @@ export const LegacyPage: React.FC = () => {
             </div>
 
             {/* Archival Timeline Indicator Ribbon (4 cols) */}
-            <div className="lg:col-span-4 flex flex-col gap-space-md">
+            <div className="col-span-4 flex flex-col gap-space-md">
               <div className="bg-surface-container-low p-space-lg rounded-xl shadow-sm flex flex-col justify-between h-[460px]">
                 <div>
                   <div className="flex items-center justify-between pb-space-sm mb-space-md">
@@ -219,20 +357,80 @@ export const LegacyPage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION B: HISTORICAL NARRATIVE & CURATORIAL ESSAY
+          SECTION 2: HISTORICAL NARRATIVE & CURATORIAL OVERVIEW
+          Mobile: Approved Stitch 3-Stat Summary Mosaic & Secretariat Testament Quote Card
+          Desktop: Approved Desktop 7-Col / 5-Col Grid Layout
           ========================================================================= */}
-      <section className="w-full bg-surface-container-low py-space-xl">
+
+      {/* MOBILE CURATORIAL OVERVIEW (lg:hidden) */}
+      <section className="px-gutter pt-space-xl flex flex-col gap-space-md lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+            CURATORIAL OVERVIEW
+          </span>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            A Crucible of South Asian Youth Diplomacy &amp; Global Statecraft
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            From its humble inception in 2014 to the historic residential plenary of 2020, BUGMUN transformed international affairs pedagogy in Bangladesh. It served as a crucible where theoretical treaties collided with sovereign crises, giving hundreds of student diplomats their first taste of high-stakes multilateral diplomacy.
+          </p>
+        </div>
+
+        {/* 3-Stat Summary Mosaic */}
+        <div className="grid grid-cols-3 gap-space-sm">
+          <div className="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col items-center text-center">
+            <span className="font-headline-sm text-headline-sm text-secondary font-bold">1,150+</span>
+            <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase mt-1 font-semibold">
+              Delegates Trained
+            </span>
+          </div>
+          <div className="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col items-center text-center">
+            <span className="font-headline-sm text-headline-sm text-primary font-bold">23+</span>
+            <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase mt-1 font-semibold">
+              Chambers Convened
+            </span>
+          </div>
+          <div className="bg-surface-container-lowest p-space-sm rounded-xl shadow-sm flex flex-col items-center text-center">
+            <span className="font-headline-sm text-headline-sm text-secondary font-bold">04</span>
+            <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase mt-1 font-semibold">
+              Landmark Assemblies
+            </span>
+          </div>
+        </div>
+
+        {/* Secretariat Testament Card */}
+        <div className="bg-primary text-on-primary p-space-lg rounded-xl shadow-md flex flex-col gap-space-md relative overflow-hidden">
+          <div className="flex items-center justify-between">
+            <span className="material-symbols-outlined text-[32px] text-secondary-container">format_quote</span>
+            <span className="font-label-protocol text-label-protocol tracking-wider uppercase text-on-primary-container font-semibold">
+              OFFICIAL ARCHIVE EXCERPT
+            </span>
+          </div>
+          <blockquote className="font-headline-sm text-headline-sm text-on-primary italic leading-snug">
+            “BUGMUN was never conceived simply to award gavels; it was engineered to instill empathy in negotiation, fidelity to truth, and the conviction that dialogue can outlast conflict.”
+          </blockquote>
+          <div className="flex flex-col pt-space-xs border-t border-primary-container/40">
+            <span className="font-title-md text-title-md text-on-primary font-bold">Office of the Secretary-General</span>
+            <span className="font-label-protocol text-label-protocol text-on-primary-container uppercase font-semibold">
+              Archives of the Secretariat • IABC BRAC University
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP CURATORIAL OVERVIEW (hidden lg:block) */}
+      <section className="hidden lg:block w-full bg-surface-container-low py-space-xl">
         <div className="max-w-[1240px] mx-auto px-margin">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+          <div className="grid grid-cols-12 gap-gutter items-center">
             {/* Curatorial Introduction (7 cols) */}
-            <div className="lg:col-span-7 flex flex-col gap-space-md">
+            <div className="col-span-7 flex flex-col gap-space-md">
               <div className="flex items-center gap-2">
                 <span className="w-6 h-0.5 bg-secondary"></span>
                 <span className="font-label-protocol text-label-protocol uppercase tracking-widest text-secondary font-bold">
                   Curatorial Overview
                 </span>
               </div>
-              <h2 className="font-headline-md text-headline-md text-primary leading-tight font-serif">
+              <h2 className="font-headline-md text-headline-md text-primary leading-tight font-serif font-bold">
                 A Crucible of South Asian Youth Diplomacy &amp; Global Statecraft
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface leading-relaxed">
@@ -245,7 +443,7 @@ export const LegacyPage: React.FC = () => {
               {/* Key Metrics Counter Display */}
               <div className="grid grid-cols-3 gap-space-md pt-space-md">
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
-                  <span className="font-headline-md text-headline-md text-primary font-serif block">
+                  <span className="font-headline-md text-headline-md text-primary font-serif block font-bold">
                     1,150+
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -253,7 +451,7 @@ export const LegacyPage: React.FC = () => {
                   </span>
                 </div>
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
-                  <span className="font-headline-md text-headline-md text-secondary font-serif block">
+                  <span className="font-headline-md text-headline-md text-secondary font-serif block font-bold">
                     23+
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -261,7 +459,7 @@ export const LegacyPage: React.FC = () => {
                   </span>
                 </div>
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
-                  <span className="font-headline-md text-headline-md text-primary font-serif block">
+                  <span className="font-headline-md text-headline-md text-primary font-serif block font-bold">
                     04
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -272,7 +470,7 @@ export const LegacyPage: React.FC = () => {
             </div>
 
             {/* Highlight Quote & Editorial Framing (5 cols) */}
-            <div className="lg:col-span-5 flex flex-col justify-center">
+            <div className="col-span-5 flex flex-col justify-center">
               <div className="bg-primary text-on-primary p-space-xl rounded-xl shadow-xl relative overflow-hidden">
                 <span className="material-symbols-outlined absolute -right-6 -bottom-6 text-primary-container/40 text-[180px] pointer-events-none select-none">
                   format_quote
@@ -292,7 +490,7 @@ export const LegacyPage: React.FC = () => {
                       <p className="font-title-md text-title-md font-semibold text-white">
                         Office of the Secretary-General
                       </p>
-                      <p className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase">
+                      <p className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase font-semibold">
                         Retrospective Inscription • BUGMUN Legacy Council
                       </p>
                     </div>
@@ -308,15 +506,111 @@ export const LegacyPage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION C: CHRONOLOGICAL TIMELINE (4 LANDMARK ASSEMBLIES)
+          SECTION 3: CHRONOLOGICAL TIMELINE (4 LANDMARK ASSEMBLIES)
+          Mobile: Approved Stitch Single-Column Stacked Dossier Articles
+          Desktop: Approved Desktop Alternating Visual/Text Cards
           ========================================================================= */}
-      <section className="w-full bg-surface py-space-xl">
+
+      {/* MOBILE DOSSIER (lg:hidden) */}
+      <section className="px-gutter pt-space-xl flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+            ARCHIVAL DOSSIER
+          </span>
+          <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold">
+            The Four Landmark Assemblies
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            An exhaustive survey of the four historic sessions that defined collegiate diplomacy at BRAC University.
+          </p>
+        </div>
+
+        {/* 4 Stacked Edition Articles */}
+        <div className="flex flex-col gap-space-lg">
+          {MILESTONES_DATA.map((milestone) => (
+            <article
+              key={milestone.year}
+              id={`edition-${milestone.year}`}
+              className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md border border-outline-variant/30"
+            >
+              <div className="flex flex-col gap-space-xs">
+                <div className="flex items-center justify-between">
+                  <span className="font-label-protocol text-label-protocol bg-secondary-container/20 text-on-secondary-container font-bold px-2 py-0.5 rounded-full uppercase">
+                    {milestone.badge}
+                  </span>
+                  <span className="font-label-protocol text-label-protocol text-outline uppercase font-semibold">
+                    {milestone.subtitle}
+                  </span>
+                </div>
+                <h3 className="font-headline-sm text-headline-sm text-primary font-bold">
+                  {milestone.theme}
+                </h3>
+                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                  {milestone.narrative}
+                </p>
+              </div>
+
+              {/* Badges */}
+              <div className="flex flex-wrap gap-space-xs">
+                {milestone.metrics.map((m, mIdx) => (
+                  <span
+                    key={mIdx}
+                    className="bg-surface-container px-2.5 py-1 rounded-md font-label-protocol text-label-protocol text-primary font-semibold"
+                  >
+                    {m.label}: {m.value}
+                  </span>
+                ))}
+              </div>
+
+              {/* Photo Showcase (Stacked) */}
+              <div className="flex flex-col gap-space-sm pt-space-xs">
+                <div className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
+                  <img
+                    className="w-full aspect-[16/10] object-cover"
+                    alt={milestone.mainPhoto.alt}
+                    src={milestone.mainPhoto.url}
+                  />
+                  <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
+                    <span className="font-body-sm text-body-sm text-primary font-medium">
+                      {milestone.mainPhoto.caption}
+                    </span>
+                    <span className="font-label-protocol text-label-protocol text-outline font-semibold">
+                      PLATE {milestone.year.slice(2)}-A
+                    </span>
+                  </div>
+                </div>
+
+                {milestone.subPhotos.slice(0, 1).map((sub, sIdx) => (
+                  <div key={sIdx} className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
+                    <img
+                      className="w-full aspect-[16/10] object-cover"
+                      alt={sub.alt}
+                      src={sub.url}
+                    />
+                    <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
+                      <span className="font-body-sm text-body-sm text-primary font-medium">
+                        {sub.caption}
+                      </span>
+                      <span className="font-label-protocol text-label-protocol text-outline font-semibold">
+                        PLATE {milestone.year.slice(2)}-B
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP DOSSIER (hidden lg:block) */}
+      <section className="hidden lg:block w-full bg-surface py-space-xl">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="text-center max-w-2xl mx-auto mb-space-xl">
             <span className="font-label-protocol text-label-protocol uppercase tracking-[0.2em] text-secondary font-bold block mb-1">
               Archival Chronology
             </span>
-            <h2 className="font-headline-lg text-headline-lg text-primary font-serif">
+            <h2 className="font-headline-lg text-headline-lg text-primary font-serif font-bold">
               The Four Landmark Assemblies
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant mt-2">
@@ -330,14 +624,14 @@ export const LegacyPage: React.FC = () => {
               return (
                 <article
                   key={milestone.year}
-                  id={`edition-${milestone.year}`}
+                  id={`edition-${milestone.year}-desktop`}
                   className="bg-surface-container-lowest rounded-xl shadow-md p-space-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-outline-variant/30"
                 >
-                  <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
-                    {/* Visual Showcase (if even: order-2 on mobile, order-1 on desktop) */}
+                  <div className="grid grid-cols-12 gap-gutter items-center">
+                    {/* Visual Showcase */}
                     <div
-                      className={`lg:col-span-5 flex flex-col gap-space-sm ${
-                        isEven ? "order-2 lg:order-1" : "order-2 lg:order-2"
+                      className={`col-span-5 flex flex-col gap-space-sm ${
+                        isEven ? "order-1" : "order-2"
                       }`}
                     >
                       <div className="relative h-64 rounded-lg overflow-hidden group shadow-sm bg-surface-container">
@@ -371,8 +665,8 @@ export const LegacyPage: React.FC = () => {
 
                     {/* Text Content & Facts */}
                     <div
-                      className={`lg:col-span-7 flex flex-col gap-space-sm ${
-                        isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"
+                      className={`col-span-7 flex flex-col gap-space-sm ${
+                        isEven ? "order-2" : "order-1"
                       }`}
                     >
                       <div className="flex items-center gap-space-sm">
@@ -388,7 +682,7 @@ export const LegacyPage: React.FC = () => {
                           </span>
                         </div>
                       </div>
-                      <h3 className="font-headline-md text-headline-md text-primary font-serif">
+                      <h3 className="font-headline-md text-headline-md text-primary font-serif font-bold">
                         {milestone.theme}
                       </h3>
                       <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
@@ -396,12 +690,12 @@ export const LegacyPage: React.FC = () => {
                       </p>
 
                       {/* Milestone Badges Grid */}
-                      <div className="grid grid-cols-2 sm:grid-cols-3 gap-space-sm pt-space-xs">
+                      <div className="grid grid-cols-3 gap-space-sm pt-space-xs">
                         {milestone.metrics.map((m, mIdx) => (
                           <div
                             key={mIdx}
                             className={`bg-surface-container p-space-sm rounded-lg ${
-                              mIdx === 2 ? "col-span-2 sm:col-span-1" : ""
+                              mIdx === 2 ? "col-span-1" : ""
                             }`}
                           >
                             <span className="font-label-protocol text-label-protocol text-secondary uppercase font-bold block">
@@ -427,12 +721,88 @@ export const LegacyPage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION D: MODULAR HISTORICAL PHOTO GALLERY (EXHIBITION ARCHIVE)
+          SECTION 4: EXHIBITION PHOTO ARCHIVE
+          Mobile: Approved Stitch 2-Column Photo Grid & Horizontal Filter Bar
+          Desktop: Approved Desktop 4-Column Grid & Curatorial Notice
           ========================================================================= */}
-      <section className="w-full bg-surface-container-low py-space-xl" id="gallery-section">
+
+      {/* MOBILE GALLERY (lg:hidden) */}
+      <section className="px-gutter pt-space-xl flex flex-col gap-space-md lg:hidden" id="gallery-section">
+        <div className="flex flex-col gap-space-xs">
+          <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+            CURATED RETROSPECTIVE
+          </span>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Exhibition Photo Archive
+          </h2>
+          <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Authentic photographic plates from across four editions. Tap any moment to inspect declassified records.
+          </p>
+        </div>
+
+        {/* Filter Pills (Scrollable) */}
+        <div className="flex gap-space-xs overflow-x-auto pb-1 -mx-gutter px-gutter scrollbar-none" id="archive-filter-bar">
+          {[
+            { key: 'all', label: 'All Moments' },
+            { key: 'plenary', label: 'Plenary Sessions' },
+            { key: 'dinners', label: 'Diplomatic Dinners' },
+            { key: 'board', label: 'Executive Boards' },
+            { key: 'tarc', label: 'TARC Residential' },
+          ].map((tab) => (
+            <button
+              key={tab.key}
+              type="button"
+              onClick={() => setSelectedCategory(tab.key)}
+              className={`filter-btn flex-shrink-0 font-label-protocol text-label-protocol uppercase px-3 py-1.5 rounded-full transition-all cursor-pointer font-semibold ${
+                selectedCategory === tab.key
+                  ? 'bg-primary text-on-primary'
+                  : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* 2-Column Photo Grid */}
+        <div className="grid grid-cols-2 gap-space-sm pt-space-xs" id="archive-gallery-grid">
+          {filteredPlates.map((plate) => (
+            <div
+              key={plate.id}
+              className="archive-card group relative bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col cursor-pointer active:scale-95 transition-transform border border-outline-variant/30"
+              onClick={() => setActivePlate(plate)}
+            >
+              <div className="relative w-full aspect-square bg-surface-container">
+                <img
+                  className="w-full h-full object-cover"
+                  alt={plate.imageAlt}
+                  src={plate.imageUrl}
+                />
+                <div className="absolute top-2 left-2 bg-surface/90 px-1.5 py-0.5 rounded text-[10px] font-label-protocol text-label-protocol font-bold text-primary">
+                  {plate.year}
+                </div>
+                <div className="absolute bottom-2 right-2 w-6 h-6 rounded-full bg-primary/80 text-on-primary flex items-center justify-center">
+                  <span className="material-symbols-outlined text-[14px]">zoom_in</span>
+                </div>
+              </div>
+              <div className="p-2 flex flex-col gap-0.5">
+                <span className="font-label-md text-label-md text-primary font-bold truncate">
+                  {plate.title}
+                </span>
+                <span className="font-label-protocol text-label-protocol text-outline uppercase truncate">
+                  {plate.subtitle}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP GALLERY (hidden lg:block) */}
+      <section className="hidden lg:block w-full bg-surface-container-low py-space-xl" id="gallery-section-desktop">
         <div className="max-w-[1240px] mx-auto px-margin">
           {/* Section Header & Filter Tabs */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-lg">
+          <div className="flex flex-row items-end justify-between gap-space-md mb-space-lg">
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <span className="material-symbols-outlined text-secondary text-[20px]">
@@ -442,7 +812,7 @@ export const LegacyPage: React.FC = () => {
                   Curated Retrospective
                 </span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-primary font-serif">
+              <h2 className="font-headline-lg text-headline-lg text-primary font-serif font-bold">
                 Exhibition Photo Archive
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant mt-1">
@@ -463,7 +833,7 @@ export const LegacyPage: React.FC = () => {
                   key={tab.key}
                   type="button"
                   onClick={() => setSelectedCategory(tab.key)}
-                  className={`px-3 py-1.5 rounded font-label-protocol text-label-protocol uppercase tracking-wider transition-all ${
+                  className={`px-3 py-1.5 rounded font-label-protocol text-label-protocol uppercase tracking-wider transition-all cursor-pointer ${
                     selectedCategory === tab.key
                       ? "bg-primary text-on-primary font-bold shadow-sm"
                       : "text-on-surface-variant hover:text-primary"
@@ -483,13 +853,13 @@ export const LegacyPage: React.FC = () => {
                 <strong className="text-primary font-semibold">Exhibition Notice:</strong> Curated historical reference plates and visual records from the BUGMUN archive series (2014–2020) are cataloged below. Authentic photographic prints are being assembled by the IABC Editorial Board for the forthcoming official commemorative monograph. Click any plate to inspect.
               </span>
             </div>
-            <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider hidden sm:block font-semibold">
+            <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
               {filteredPlates.length} Reference Plates
             </span>
           </div>
 
           {/* Gallery Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md" id="gallery-grid">
+          <div className="grid grid-cols-4 gap-space-md" id="gallery-grid">
             {filteredPlates.map((plate) => (
               <div
                 key={plate.id}
@@ -523,17 +893,94 @@ export const LegacyPage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION E: THE RETURN: BUGMUN 2027 ("THE LEGACY CONTINUES")
+          SECTION 5: THE RETURN: BUGMUN 2027 ("THE LEGACY CONTINUES")
+          Mobile: Approved Stitch Gradient Card with Quick CTAs
+          Desktop: Approved Desktop Broad Lattice Card with Archival Emblem
           ========================================================================= */}
-      <section className="w-full bg-tertiary text-on-tertiary py-space-xl relative overflow-hidden">
+
+      {/* MOBILE LEGACY CONTINUATION (lg:hidden) */}
+      <section className="px-gutter pt-space-xl lg:hidden">
+        <div className="bg-gradient-to-br from-primary via-primary-container to-tertiary text-on-primary rounded-xl p-space-lg shadow-xl flex flex-col gap-space-md relative overflow-hidden">
+          {/* Decorative Backdrop Graphic */}
+          <div className="absolute -right-12 -top-12 w-48 h-48 rounded-full bg-secondary/20 blur-2xl pointer-events-none"></div>
+          <div className="flex items-center justify-between">
+            <span className="font-label-protocol text-label-protocol bg-secondary-container/20 text-secondary-container px-2.5 py-1 rounded-full uppercase tracking-wider font-bold">
+              THE FIFTH ASSEMBLY • 2027
+            </span>
+            <span className="material-symbols-outlined text-secondary-container text-[24px]">verified</span>
+          </div>
+          <div className="flex flex-col gap-space-xs">
+            <h2 className="font-headline-lg-mobile text-headline-lg-mobile text-on-primary font-bold">
+              The Legacy Continues — BUGMUN 2027
+            </h2>
+            <p className="font-body-md text-body-md text-on-primary-container leading-relaxed">
+              Seven years since the storied 2020 assembly, the world stands at an unprecedented inflection point. In 2027, BUGMUN returns for its momentous 5th Edition at the contemporary campus of BRAC University, summoning the next vanguard of global changemakers.
+            </p>
+          </div>
+          {/* Revival Stamp Badge */}
+          <div className="bg-surface/10 backdrop-blur-md p-space-sm rounded-lg flex items-center gap-space-sm">
+            <span className="material-symbols-outlined text-secondary-container text-[28px]">token</span>
+            <div className="flex flex-col">
+              <span className="font-label-md text-label-md text-on-primary font-bold">5th Edition Revival Summit</span>
+              <span className="font-label-protocol text-label-protocol text-on-primary-container">Dhaka, Bangladesh • 2027 Secretariat Registry</span>
+            </div>
+          </div>
+          {/* Action Buttons */}
+          <div className="flex flex-col gap-space-sm pt-space-xs">
+            <Link
+              to="/"
+              className="w-full h-12 bg-secondary-container text-on-secondary-container rounded-lg font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-2 font-bold shadow-md hover:brightness-105 transition-all"
+            >
+              <span>Enter BUGMUN 2027 Portal</span>
+              <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+            </Link>
+            <button
+              type="button"
+              onClick={() => setShowMonographNotice(true)}
+              className="w-full h-12 bg-surface/10 text-on-primary hover:bg-surface/20 rounded-lg font-label-lg text-label-lg uppercase tracking-wider flex items-center justify-center gap-2 transition-colors cursor-pointer"
+            >
+              <span className="material-symbols-outlined text-[18px]">download</span>
+              <span>Download Commemorative Brief (PDF)</span>
+            </button>
+            {showMonographNotice && (
+              <div className="bg-primary/90 border border-secondary-container/40 text-on-primary rounded-xl p-4 mt-2 flex items-start justify-between gap-3 animate-fadeIn">
+                <div className="flex items-start gap-2.5">
+                  <span className="material-symbols-outlined text-secondary-container text-[22px] shrink-0 mt-0.5">
+                    auto_stories
+                  </span>
+                  <div className="font-body-sm text-body-sm">
+                    <p className="font-semibold text-secondary-container">
+                      Commemorative Monograph In Compilation
+                    </p>
+                    <p className="text-tertiary-fixed-dim mt-0.5">
+                      The official BUGMUN 2014–2027 Commemorative Archival Monograph is currently being compiled and authenticated by the IABC Editorial Board. The publication dossier will be released digitally alongside the registration portal launch.
+                    </p>
+                  </div>
+                </div>
+                <button
+                  type="button"
+                  onClick={() => setShowMonographNotice(false)}
+                  className="text-tertiary-fixed hover:text-white p-1"
+                  aria-label="Dismiss notice"
+                >
+                  <span className="material-symbols-outlined text-[18px]">close</span>
+                </button>
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP LEGACY CONTINUATION (hidden lg:block) */}
+      <section className="hidden lg:block w-full bg-tertiary text-on-tertiary py-space-xl relative overflow-hidden">
         {/* Diplomatic Lattice Background Motif */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
 
         <div className="max-w-[1240px] mx-auto px-margin relative z-10">
           <div className="bg-primary-container/60 border border-outline/10 p-space-xl rounded-2xl backdrop-blur-sm shadow-2xl">
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+            <div className="grid grid-cols-12 gap-gutter items-center">
               {/* Text Narrative & Strategic Bridge (8 cols) */}
-              <div className="lg:col-span-8 flex flex-col gap-space-md">
+              <div className="col-span-8 flex flex-col gap-space-md">
                 <div className="flex items-center gap-space-sm">
                   <span className="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold">
                     5
@@ -542,7 +989,7 @@ export const LegacyPage: React.FC = () => {
                     The Fifth Assembly • 2027
                   </span>
                 </div>
-                <h2 className="font-headline-lg text-headline-lg text-white font-serif leading-tight">
+                <h2 className="font-headline-lg text-headline-lg text-white font-serif leading-tight font-bold">
                   The Legacy Continues — BUGMUN 2027
                 </h2>
                 <p className="font-body-lg text-body-lg text-tertiary-fixed-dim leading-relaxed">
@@ -601,7 +1048,7 @@ export const LegacyPage: React.FC = () => {
               </div>
 
               {/* Decorative Archival Emblem / Monogram (4 cols) */}
-              <div className="lg:col-span-4 flex flex-col items-center justify-center">
+              <div className="col-span-4 flex flex-col items-center justify-center">
                 <div className="w-56 h-56 rounded-full bg-tertiary-container/80 flex flex-col items-center justify-center text-center p-space-md relative group">
                   <div className="absolute inset-0 rounded-full border border-secondary-container/30 animate-pulse"></div>
                   <span className="material-symbols-outlined text-secondary-container text-[48px] mb-1">
