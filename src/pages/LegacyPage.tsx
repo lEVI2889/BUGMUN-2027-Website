@@ -6,6 +6,7 @@ import { LightboxModal } from '../components/LightboxModal';
 export const LegacyPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activePlate, setActivePlate] = useState<GalleryPlate | null>(null);
+  const [showMonographNotice, setShowMonographNotice] = useState<boolean>(false);
 
   const filteredPlates = selectedCategory === 'all'
     ? GALLERY_PLATES
@@ -30,7 +31,7 @@ export const LegacyPage: React.FC = () => {
             </div>
             <div className="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-1 rounded-full text-on-surface-variant font-label-protocol text-label-protocol uppercase tracking-wider">
               <span className="inline-block w-2 h-2 rounded-full bg-secondary-container"></span>
-              <span>Exhibition Protocol: Declassified Public Record</span>
+              <span>Exhibition Protocol: Historical Archive Series</span>
             </div>
           </div>
 
@@ -81,13 +82,13 @@ export const LegacyPage: React.FC = () => {
                         Opening of the Historic First Assembly
                       </h3>
                       <p className="font-body-sm text-body-sm text-surface-variant max-w-lg mt-1 leading-relaxed">
-                        Delegates from 14 regional institutions convene in Dhaka to inaugurate the BUGMUN multilateral charter.
+                        More than 400 representatives from countries including Costa Rica, Nepal, Nigeria, Pakistan, Indonesia, and India convene in Dhaka to inaugurate BUGMUN.
                       </p>
                     </div>
                     <div className="text-right font-label-protocol text-label-protocol text-tertiary-fixed-dim whitespace-nowrap">
                       <span>CATALOG NO. BGM-ARC-1401</span>
                       <br />
-                      <span>AUTHENTICATED IABC ARCHIVES</span>
+                      <span>ARCHIVAL REFERENCE PLATE</span>
                     </div>
                   </div>
                 </div>
@@ -238,33 +239,33 @@ export const LegacyPage: React.FC = () => {
                 In 2014, BRAC University witnessed the inauguration of an ambitious institutional venture: the creation of a flagship diplomatic simulation that would rise above conventional debating circuits. Spearheaded by the International Association of Business Communicators (IABC), BUGMUN was established not merely as an extracurricular exercise, but as an intellectual sanctuary where complex geopolitical impasses met collegiate idealism.
               </p>
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                Through four transformative assemblies spanning from 2014 to 2020, the conference cultivated an alumni community exceeding 1,500 delegates, diplomats, legal scholars, and corporate strategists. Rooted in rigorous research, authentic Rules of Procedure, and uncompromising ethical conduct, BUGMUN set the gold standard for youth parliamentary discourse in the region.
+                Through four transformative assemblies spanning from 2014 to 2020, the conference cultivated an alumni community of over 1,150 verified delegates and executive board leaders across documented summits. Rooted in rigorous research, authentic Rules of Procedure, and uncompromising ethical conduct, BUGMUN set the benchmark for youth parliamentary discourse in Bangladesh.
               </p>
 
               {/* Key Metrics Counter Display */}
               <div className="grid grid-cols-3 gap-space-md pt-space-md">
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
                   <span className="font-headline-md text-headline-md text-primary font-serif block">
-                    1,500+
+                    1,150+
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
-                    Delegates Trained
+                    Verified Delegates &amp; EB
                   </span>
                 </div>
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
                   <span className="font-headline-md text-headline-md text-secondary font-serif block">
-                    42
+                    23+
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
-                    Committees Convened
+                    Verified Chambers
                   </span>
                 </div>
                 <div className="bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
                   <span className="font-headline-md text-headline-md text-primary font-serif block">
-                    18
+                    04
                   </span>
                   <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
-                    Sovereign Nations Rep.
+                    Landmark Assemblies
                   </span>
                 </div>
               </div>
@@ -479,11 +480,11 @@ export const LegacyPage: React.FC = () => {
             <div className="flex items-center gap-space-sm text-on-surface-variant">
               <span className="material-symbols-outlined text-secondary">info</span>
               <span className="font-body-sm text-body-sm">
-                <strong className="text-primary font-semibold">Exhibition Notice:</strong> Authentic archival photographic prints from the IABC institutional storage are cataloged below. Click any image to launch high-resolution view.
+                <strong className="text-primary font-semibold">Exhibition Notice:</strong> Curated historical reference plates and visual records from the BUGMUN archive series (2014–2020) are cataloged below. Authentic photographic prints are being assembled by the IABC Editorial Board for the forthcoming official commemorative monograph. Click any plate to inspect.
               </span>
             </div>
             <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider hidden sm:block font-semibold">
-              {filteredPlates.length} Curated Plates
+              {filteredPlates.length} Reference Plates
             </span>
           </div>
 
@@ -562,11 +563,7 @@ export const LegacyPage: React.FC = () => {
                   </Link>
                   <button
                     type="button"
-                    onClick={() =>
-                      alert(
-                        "The BUGMUN 2014–2027 Commemorative Archival Monograph is being compiled by the IABC Editorial Board. Registration notifications will open shortly."
-                      )
-                    }
+                    onClick={() => setShowMonographNotice(true)}
                     className="inline-flex items-center gap-space-xs bg-tertiary-container text-tertiary-fixed hover:text-white px-space-md py-space-sm rounded-lg hover:bg-tertiary transition-all font-label-lg text-label-lg cursor-pointer"
                   >
                     <span className="material-symbols-outlined text-[18px]">
@@ -575,6 +572,32 @@ export const LegacyPage: React.FC = () => {
                     <span>Download Historical Commemorative Brief (PDF)</span>
                   </button>
                 </div>
+
+                {showMonographNotice && (
+                  <div className="bg-primary/90 border border-secondary-container/40 text-on-primary rounded-xl p-4 mt-2 flex items-start justify-between gap-3 animate-fadeIn">
+                    <div className="flex items-start gap-2.5">
+                      <span className="material-symbols-outlined text-secondary-container text-[22px] shrink-0 mt-0.5">
+                        auto_stories
+                      </span>
+                      <div className="font-body-sm text-body-sm">
+                        <p className="font-semibold text-secondary-container">
+                          Commemorative Monograph In Compilation
+                        </p>
+                        <p className="text-tertiary-fixed-dim mt-0.5">
+                          The official BUGMUN 2014–2027 Commemorative Archival Monograph is currently being compiled and authenticated by the IABC Editorial Board. The publication dossier will be released digitally alongside the registration portal launch.
+                        </p>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setShowMonographNotice(false)}
+                      className="text-tertiary-fixed hover:text-white p-1"
+                      aria-label="Dismiss notice"
+                    >
+                      <span className="material-symbols-outlined text-[18px]">close</span>
+                    </button>
+                  </div>
+                )}
               </div>
 
               {/* Decorative Archival Emblem / Monogram (4 cols) */}
