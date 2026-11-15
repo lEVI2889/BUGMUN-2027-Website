@@ -69,7 +69,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
           <div className="w-full md:w-1/3 flex flex-col justify-between h-full">
             <div>
               <span className="bg-secondary-fixed text-on-secondary-fixed font-label-protocol text-label-protocol px-2 py-0.5 rounded font-bold uppercase">
-                Declassified Document • {plate.year}
+                Archival Reference Plate • {plate.year}
               </span>
               <h4 id="lightbox-title" className="font-headline-sm text-headline-sm font-serif text-primary mt-2">
                 {plate.title}
@@ -82,7 +82,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
             <div className="pt-space-md border-t border-outline/20 mt-space-md flex flex-col gap-1 font-label-protocol text-label-protocol text-on-surface-variant">
               <span>REPOSITORY: BRACU-IABC-HERITAGE</span>
               <span>RIGHTS: EDUCATIONAL ACCESS ONLY</span>
-              <span className="text-secondary font-semibold">VERIFIED ARCHIVAL PLATE</span>
+              <span className="text-secondary font-semibold">ARCHIVAL CONCEPT PREVIEW</span>
             </div>
           </div>
         </div>

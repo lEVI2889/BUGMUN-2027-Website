@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
               <img
                 alt="BUGMUN Logo"
                 className="h-8 w-auto object-contain"
-                src="/assets/logos/Colored Logo.png"
+                src="/assets/logos/White Logo.png"
               />
               <div className="flex flex-col">
                 <span className="font-title-lg text-title-lg text-tertiary-fixed tracking-tight">
@@ -56,13 +56,10 @@ export const Footer: React.FC = () => {
                 <span className="material-symbols-outlined text-[18px]">podcasts</span>
               </a>
               <a
-                aria-label="Documentation"
+                aria-label="Documentation Archive"
                 className="w-8 h-8 rounded-lg bg-tertiary-container flex items-center justify-center text-tertiary-fixed hover:bg-secondary-container hover:text-on-secondary-container transition-colors"
-                href="#"
-                onClick={(e) => {
-                  e.preventDefault();
-                  alert("Official BUGMUN Conference Guide & Documentation will be released in Q1 2027.");
-                }}
+                href="/#news-section"
+                title="Official Dispatches & Documentation"
               >
                 <span className="material-symbols-outlined text-[18px]">description</span>
               </a>
@@ -93,11 +90,7 @@ export const Footer: React.FC = () => {
               Itinerary &amp; Order
             </a>
             <a
-              href="#"
-              onClick={(e) => {
-                e.preventDefault();
-                alert("Standard UN Rules of Procedure and delegate guidelines are currently in editorial review.");
-              }}
+              href="/#about-legacy"
               className="font-body-sm text-body-sm text-tertiary-fixed-dim hover:text-on-tertiary transition-colors"
             >
               Protocol Guidelines
