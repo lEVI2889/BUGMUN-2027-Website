@@ -122,15 +122,15 @@ export const HomePage: React.FC = () => {
                     <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider">
                       Convocation Window
                     </span>
-                    <span className="bg-secondary/40 text-secondary-fixed text-label-protocol font-label-protocol px-2 py-0.5 rounded uppercase">
-                      Fall 2027 • Tentative
+                    <span className="bg-secondary/40 text-secondary-fixed text-label-protocol font-label-protocol px-2 py-0.5 rounded uppercase font-semibold">
+                      Tentative • Dates TBA
                     </span>
                   </div>
                   <span className="font-title-md text-title-md text-surface-container-lowest mt-0.5 font-semibold">
                     Dates To Be Announced
                   </span>
                   <span className="font-body-sm text-body-sm text-tertiary-fixed-dim">
-                    Official Gazette Release in Q1 2027
+                    Official Schedule Announcement Forthcoming
                   </span>
                 </div>
               </div>
@@ -175,10 +175,10 @@ export const HomePage: React.FC = () => {
                 Revitalizing Sovereign Dialogue After a Sabbatical of Historic Global Realignment
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
-                First inaugurated in 2014 by the International Association of Business Communicators (IABC) at BRAC University, BUGMUN emerged as the gold standard of Model United Nations conferences in Bangladesh. Following the widely acclaimed 2020 digital symposium, the Secretariat entered a purposeful period of strategic restructuring to reflect contemporary diplomatic mechanisms.
+                First inaugurated in 2014 by the International Association of Business Communicators (IABC | BRAC University), BUGMUN grew into one of the largest and most influential Model United Nations conferences in Bangladesh across landmark editions in 2014, 2016, 2017, and 2020. Traditionally organized during residential semester breaks as an immersive conference at the Savar TARC campus, the event was placed on hold following 2020 due to the pandemic and the suspension of residential semesters.
               </p>
               <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                BUGMUN 2027 marks our monumental Fifth Plenary Edition. Assembled under the auspices of BRAC University’s state-of-the-art Badda campus, this summit is meticulously engineered to transcend academic rhetoric. Delegates will engage with real-world draft treaty frameworks, simulate sovereign diplomatic protocol, and craft actionable resolutions anchored in the United Nations Sustainable Development Goals.
+                As BRAC University transitioned to its state-of-the-art permanent campus in Badda, Dhaka, IABC continued hosting flagship forums such as TEDxBRACU and DIPLOMATS’ MEET. Now, BUGMUN 2027 marks our monumental Fifth Plenary Edition—reviving this premier platform on a greater scale with renewed ambition to foster multilateral consensus, youth leadership, and actionable engagement with the UN Sustainable Development Goals.
               </p>
               <div className="p-space-lg bg-surface-container-low rounded-xl flex items-center gap-space-md shadow-sm">
                 <span className="material-symbols-outlined text-[32px] text-secondary shrink-0">
@@ -689,10 +689,13 @@ export const HomePage: React.FC = () => {
                   </button>
                 </form>
                 {notifySuccess && (
-                  <p className="text-secondary-fixed font-body-sm text-body-sm mt-3 flex items-center gap-1.5 animate-fadeIn">
-                    <span className="material-symbols-outlined text-[16px]">check_circle</span>
-                    <span>Your interest has been recorded in the diplomatic secretariat registry.</span>
-                  </p>
+                  <div className="bg-secondary/20 border border-secondary/40 text-surface-container-lowest rounded-lg p-3.5 mt-3 flex items-start gap-2.5 animate-fadeIn">
+                    <span className="material-symbols-outlined text-secondary-container text-[20px] shrink-0 mt-0.5">check_circle</span>
+                    <div className="font-body-sm text-body-sm">
+                      <p className="font-semibold text-secondary-container">Thank you for your interest!</p>
+                      <p className="text-tertiary-fixed-dim mt-0.5">Official delegate and delegation registration will launch with the public portal in 2027. Follow @BUGMUNofficial on Facebook for live updates.</p>
+                    </div>
+                  </div>
                 )}
               </div>
 
