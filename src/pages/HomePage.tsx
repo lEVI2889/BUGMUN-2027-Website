@@ -273,8 +273,9 @@ export const HomePage: React.FC = () => {
         <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-sm">
           <img
             className="w-full h-full object-cover"
-            alt="BUGMUN Deliberation Chamber"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWgiKcT7iyWg-y8YZsPpmt9DBJDWnZj9cKHNPuznBffPpsqYIWiNwR4PXCQHR7nbDgBy4Zxv1jAFN6Z3xKlpJuiAg4MCWk_SCzovoZqsn1H9mX0cAQmYkry9gIJU_YcjRzZC3OMgiiwX_gMTbtxtm3MlD_wh0qFuBtGVvIBsaRDit0wIKseo8R60yxuT-CvRUlJiptN8Zj3rz1NykeJNG_Ol_Iaa7a1eII23k8khQ"
+            alt="Authentic BUGMUN Committee Chamber Deliberation"
+            src="/assets/legacy/2020/83562882_2658447977608671_465243531951210496_n.jpg"
+            loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-tertiary/80 via-tertiary/20 to-transparent flex items-end p-space-md">
             <div className="flex items-center gap-2 text-on-tertiary">
@@ -420,8 +421,9 @@ export const HomePage: React.FC = () => {
               <div className="relative w-full h-56 rounded-xl overflow-hidden shadow-md">
                 <img
                   className="w-full h-full object-cover"
-                  alt="BUGMUN Assembly Archives Deliberation"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrnwF7Vst_9EhSmXiHlFNx3oeYyPu0XabqQBvO9i-Ajf-2wTc53JI4pyX_ZG_k-9WKgvmXDS7xK4IsEX-H-HEQ6XGwyCi6q-WFhVNTGWkn9BK1tVR-Gg04W6NhfhJBRx1YR1CJm5JAZO0fDObVU5VJM454x1yHhgYhX9gXrY_tJRvDcHUnveozS1LJppmtB6CZUNLHSNgvqQpV2DP9IYhSK5vResGsbCqH4e8dE3c"
+                  alt="Authentic BUGMUN Committee Deliberation"
+                  src="/assets/legacy/2020/83741393_2658465557606913_3097477564302622720_n.jpg"
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent flex items-end p-4">
                   <span className="font-label-protocol text-label-protocol text-surface-container-lowest uppercase tracking-widest font-semibold">
