@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom';
 import { MILESTONES_DATA, GALLERY_PLATES, GalleryPlate } from '../data/legacy';
 import { LightboxModal } from '../components/LightboxModal';
 
+const FILTER_TABS = [
+  { key: 'all', label: 'All Moments' },
+  { key: 'plenary', label: 'Plenary Sessions' },
+  { key: 'committee', label: 'Committee Sessions' },
+  { key: 'registration', label: 'Registration & Arrival' },
+  { key: 'awards', label: 'Ceremonies & Awards' },
+  { key: 'cultural', label: 'Cultural Programme' },
+  { key: 'press', label: 'International Press' },
+  { key: 'graphics', label: 'Historical Graphics' },
+];
+
 export const LegacyPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activePlate, setActivePlate] = useState<GalleryPlate | null>(null);
@@ -70,25 +81,25 @@ export const LegacyPage: React.FC = () => {
           <div className="relative w-full aspect-[4/3] bg-surface-container">
             <img
               className="w-full h-full object-cover"
-              alt="BUGMUN 2014 Archival Plenary"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTTQwClM0-1qJsR1FVt95uYaBdDfY5M4hi2icK-3eDQNmJeIMsi_sr0FC4kncXDDA74AHKu3pQTSHU-iT5ZqFubk--xsMw1l9Tr9vFr33TePOPnsgfFqz2XST_LeNs55w0wXrzB1RE-jQuKSoP6-q-JKzj4E05chRbBTaKwBxWyiR5OR_Gr9K-PxRiZxDTOdrNctR9jepMLBaDNAeMiDimeCTy4gIcCoXCpIJVdis"
+              alt={GALLERY_PLATES[0].imageAlt}
+              src={GALLERY_PLATES[0].imageUrl}
             />
             <div className="absolute top-3 left-3 bg-tertiary/85 backdrop-blur-md px-2.5 py-1 rounded-md text-on-tertiary flex items-center gap-1.5 shadow-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
               <span className="font-label-protocol text-label-protocol tracking-wider uppercase font-semibold">Archival Plate 01</span>
             </div>
             <div className="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md px-2.5 py-1 rounded-md text-primary font-label-protocol text-label-protocol font-bold">
-              HISTORIC FIRST ASSEMBLY
+              CONVOCATION PLENARY
             </div>
           </div>
           <div className="p-space-md flex flex-col gap-space-xs bg-surface-container-lowest">
-            <span className="font-title-md text-title-md text-primary font-bold">Session Plenary 2014</span>
+            <span className="font-title-md text-title-md text-primary font-bold">Session Plenary 2020</span>
             <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-              Opening of the inaugural BUGMUN plenary at BRAC University, setting the precedent for nationwide model diplomacy.
+              Opening plenary convocation dais at BRAC University TARC Savar campus, convening residential delegates and the complete Executive Secretariat.
             </p>
             <div className="pt-space-xs flex items-center justify-between text-outline border-t border-outline-variant/20 mt-1">
-              <span className="font-label-protocol text-label-protocol tracking-wider uppercase">CATALOG NO. BGM-ARC-1401</span>
-              <span className="font-label-protocol text-label-protocol text-secondary font-semibold">AUTHENTICATED IABC</span>
+              <span className="font-label-protocol text-label-protocol tracking-wider uppercase">CATALOG NO. BGM-ARC-2001</span>
+              <span className="font-label-protocol text-label-protocol text-secondary font-semibold">AUTHENTICATED IABC ARCHIVE</span>
             </div>
           </div>
         </div>
@@ -201,8 +212,8 @@ export const LegacyPage: React.FC = () => {
                 >
                   <img
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    alt="BUGMUN 2014 Archival Plenary"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHQVMvVHwQQlCY0sfrSQMOhcEXlHUwvrcgLoXlmbNaCRnFIYrSibvCw4IkUulsRM2PDm2eDrOgrT740GNxRB08P_RN6jw-PH3V5v49vOaIB4qOAtdWn46Oa7SJqR5cpMThXQPB5kvlYtRuKL94dSWmjF6i2aLqZNQGXchWPapcZYehgXElYJSAsFD8TjphAJfjLs40fR5NxJeTPEWG1O-DwghWMN_mOfrFaTC05as"
+                    alt={GALLERY_PLATES[0].imageAlt}
+                    src={GALLERY_PLATES[0].imageUrl}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent"></div>
                   {/* Bottom Scrim Citation Overlay */}
@@ -213,20 +224,20 @@ export const LegacyPage: React.FC = () => {
                           Archival Plate 01
                         </span>
                         <span className="font-label-protocol text-label-protocol text-secondary-fixed uppercase tracking-wider font-semibold">
-                          Session Plenary 2014
+                          Session Plenary 2020
                         </span>
                       </div>
                       <h3 className="font-headline-sm text-headline-sm font-serif text-white font-bold">
-                        Opening of the Historic First Assembly
+                        Executive Secretariat Plenary Convocation
                       </h3>
                       <p className="font-body-sm text-body-sm text-surface-variant max-w-lg mt-1 leading-relaxed">
-                        More than 400 representatives from countries including Costa Rica, Nepal, Nigeria, Pakistan, Indonesia, and India convene in Dhaka to inaugurate BUGMUN.
+                        The Secretary-General, President, and Committee Directors preside over the formal opening convocation of BUGMUN 2020 at the residential campus in Savar.
                       </p>
                     </div>
                     <div className="text-right font-label-protocol text-label-protocol text-tertiary-fixed-dim whitespace-nowrap">
-                      <span>CATALOG NO. BGM-ARC-1401</span>
+                      <span>CATALOG NO. BGM-ARC-2001</span>
                       <br />
-                      <span>ARCHIVAL REFERENCE PLATE</span>
+                      <span>DECLASSIFIED PHOTOGRAPHIC RECORD</span>
                     </div>
                   </div>
                 </div>
@@ -569,6 +580,7 @@ export const LegacyPage: React.FC = () => {
                     className="w-full aspect-[16/10] object-cover"
                     alt={milestone.mainPhoto.alt}
                     src={milestone.mainPhoto.url}
+                    loading="lazy"
                   />
                   <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
                     <span className="font-body-sm text-body-sm text-primary font-medium">
@@ -586,6 +598,7 @@ export const LegacyPage: React.FC = () => {
                       className="w-full aspect-[16/10] object-cover"
                       alt={sub.alt}
                       src={sub.url}
+                      loading="lazy"
                     />
                     <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
                       <span className="font-body-sm text-body-sm text-primary font-medium">
@@ -639,6 +652,7 @@ export const LegacyPage: React.FC = () => {
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                           alt={milestone.mainPhoto.alt}
                           src={milestone.mainPhoto.url}
+                          loading="lazy"
                         />
                         <div className="absolute bottom-2 left-2 bg-primary/80 backdrop-blur-sm text-on-primary font-label-protocol text-label-protocol px-2 py-0.5 rounded font-semibold">
                           {milestone.mainPhoto.caption}
@@ -654,6 +668,7 @@ export const LegacyPage: React.FC = () => {
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                               alt={sub.alt}
                               src={sub.url}
+                              loading="lazy"
                             />
                             <div className="absolute bottom-1 left-1 bg-tertiary/80 text-on-tertiary font-label-protocol text-label-protocol px-1.5 py-0.5 rounded text-[10px] font-semibold">
                               {sub.caption}
@@ -742,13 +757,7 @@ export const LegacyPage: React.FC = () => {
 
         {/* Filter Pills (Scrollable) */}
         <div className="flex gap-space-xs overflow-x-auto pb-1 -mx-gutter px-gutter scrollbar-none" id="archive-filter-bar">
-          {[
-            { key: 'all', label: 'All Moments' },
-            { key: 'plenary', label: 'Plenary Sessions' },
-            { key: 'dinners', label: 'Diplomatic Dinners' },
-            { key: 'board', label: 'Executive Boards' },
-            { key: 'tarc', label: 'TARC Residential' },
-          ].map((tab) => (
+          {FILTER_TABS.map((tab) => (
             <button
               key={tab.key}
               type="button"
@@ -777,6 +786,7 @@ export const LegacyPage: React.FC = () => {
                   className="w-full h-full object-cover"
                   alt={plate.imageAlt}
                   src={plate.imageUrl}
+                  loading="lazy"
                 />
                 <div className="absolute top-2 left-2 bg-surface/90 px-1.5 py-0.5 rounded text-[10px] font-label-protocol text-label-protocol font-bold text-primary">
                   {plate.year}
@@ -822,13 +832,7 @@ export const LegacyPage: React.FC = () => {
 
             {/* Archival Gallery Category Filters */}
             <div className="flex flex-wrap gap-1 bg-surface-container p-1 rounded-lg">
-              {[
-                { key: 'all', label: 'All Moments' },
-                { key: 'plenary', label: 'Plenary Sessions' },
-                { key: 'dinners', label: 'Diplomatic Dinners' },
-                { key: 'board', label: 'Executive Boards' },
-                { key: 'tarc', label: 'TARC Residential' },
-              ].map((tab) => (
+              {FILTER_TABS.map((tab) => (
                 <button
                   key={tab.key}
                   type="button"
@@ -850,11 +854,11 @@ export const LegacyPage: React.FC = () => {
             <div className="flex items-center gap-space-sm text-on-surface-variant">
               <span className="material-symbols-outlined text-secondary">info</span>
               <span className="font-body-sm text-body-sm">
-                <strong className="text-primary font-semibold">Exhibition Notice:</strong> Curated historical reference plates and visual records from the BUGMUN archive series (2014–2020) are cataloged below. Authentic photographic prints are being assembled by the IABC Editorial Board for the forthcoming official commemorative monograph. Click any plate to inspect.
+                <strong className="text-primary font-semibold">Exhibition Notice:</strong> Authentic historical photographic plates and archival graphics from the BUGMUN archive series (2017–2020) are cataloged below under the custody of the IABC Secretariat. Click any plate to inspect official declassified records.
               </span>
             </div>
             <span className="font-label-protocol text-label-protocol text-on-surface-variant uppercase tracking-wider font-semibold">
-              {filteredPlates.length} Reference Plates
+              {filteredPlates.length} Archival Plates
             </span>
           </div>
 
@@ -870,6 +874,7 @@ export const LegacyPage: React.FC = () => {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   alt={plate.imageAlt}
                   src={plate.imageUrl}
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-80 group-hover:opacity-100 transition-opacity"></div>
                 <div className="absolute top-3 left-3 bg-secondary text-on-secondary font-label-protocol text-label-protocol px-2 py-0.5 rounded font-bold">
