@@ -206,20 +206,26 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
         }`}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between h-16 flex-shrink-0">
-          <div className="flex items-center gap-space-sm">
+        <div className="flex items-center justify-between h-16 flex-shrink-0 px-space-md -mx-gutter -mt-gutter bg-primary text-on-primary shadow-sm">
+          <div className="flex items-center gap-space-sm min-w-0">
             <img
               alt="BUGMUN Logo"
-              className="h-8 w-auto object-contain"
-              src="/assets/logos/Colored Logo.png"
+              className="h-8 w-auto object-contain flex-shrink-0"
+              src="/assets/logos/White Logo.png"
             />
-            <span className="font-title-md text-title-md text-primary font-bold tracking-tight">
-              BUGMUN 2027
-            </span>
+            <div className="flex items-center gap-1.5 min-w-0">
+              <span className="font-title-md text-title-md text-on-primary font-bold tracking-tight whitespace-nowrap">
+                BUGMUN 2027
+              </span>
+              <span className="text-on-primary/40 font-light select-none">|</span>
+              <span className="font-label-protocol text-label-protocol text-secondary-fixed uppercase font-semibold truncate">
+                BRAC University
+              </span>
+            </div>
           </div>
           <button
             type="button"
-            className="w-11 h-11 flex items-center justify-center text-on-surface-variant hover:bg-surface-container rounded-lg transition-colors"
+            className="w-11 h-11 flex items-center justify-center text-on-primary/80 hover:text-on-primary hover:bg-white/10 rounded-lg transition-colors flex-shrink-0 ml-2"
             onClick={() => setMobileMenuOpen(false)}
             aria-label="Close Navigation Drawer"
           >
