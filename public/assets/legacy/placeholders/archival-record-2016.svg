@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2016" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c1829" />
+      <stop offset="50%" stop-color="#112240" />
+      <stop offset="100%" stop-color="#0a1322" />
+    </linearGradient>
+    <pattern id="grid2016" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(80, 196, 253, 0.04)" stroke-width="1" />
+    </pattern>
+    <radialGradient id="glow2016" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="rgba(80, 196, 253, 0.12)" />
+      <stop offset="100%" stop-color="rgba(80, 196, 253, 0)" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad2016)" />
+  <rect width="1200" height="800" fill="url(#grid2016)" />
+  <rect width="1200" height="800" fill="url(#glow2016)" />
+
+  <!-- Outer Border & Archival Frame -->
+  <rect x="40" y="40" width="1120" height="720" fill="none" stroke="rgba(202, 138, 4, 0.25)" stroke-width="1.5" rx="12" />
+  <rect x="52" y="52" width="1096" height="696" fill="none" stroke="rgba(80, 196, 253, 0.15)" stroke-width="1" stroke-dasharray="6,4" rx="8" />
+
+  <!-- Corner Brackets -->
+  <path d="M 36 60 L 36 36 L 60 36" fill="none" stroke="#ca8a04" stroke-width="3" />
+  <path d="M 1140 36 L 1164 36 L 1164 60" fill="none" stroke="#ca8a04" stroke-width="3" />
+  <path d="M 36 740 L 36 764 L 60 764" fill="none" stroke="#ca8a04" stroke-width="3" />
+  <path d="M 1140 764 L 1164 764 L 1164 740" fill="none" stroke="#ca8a04" stroke-width="3" />
+
+  <!-- Top Classification Header -->
+  <g transform="translate(80, 100)">
+    <rect x="0" y="0" width="310" height="32" rx="4" fill="rgba(202, 138, 4, 0.15)" stroke="rgba(202, 138, 4, 0.4)" stroke-width="1" />
+    <text x="14" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#facc15" letter-spacing="2">ARCHIVAL DOSSIER // SERIES 2016</text>
+    <text x="750" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="12" font-weight="600" fill="#94a3b8" letter-spacing="1.5">REGISTRY REF: BGM-ARC-1600</text>
+  </g>
+
+  <!-- Central Watermark Emblem -->
+  <g transform="translate(600, 390)" opacity="0.12">
+    <circle cx="0" cy="0" r="160" fill="none" stroke="#50c4fd" stroke-width="3" />
+    <circle cx="0" cy="0" r="140" fill="none" stroke="#facc15" stroke-width="1.5" stroke-dasharray="8,6" />
+    <circle cx="0" cy="0" r="100" fill="none" stroke="#50c4fd" stroke-width="1" />
+    <path d="M -80 60 C -120 -20, -100 -100, 0 -130 C 100 -100, 120 -20, 80 60" fill="none" stroke="#50c4fd" stroke-width="3" />
+    <text x="0" y="15" font-family="'Times New Roman', Times, serif" font-size="72" font-weight="bold" fill="#facc15" text-anchor="middle">Ψ</text>
+  </g>
+
+  <!-- Center Announcement -->
+  <g transform="translate(600, 320)" text-anchor="middle">
+    <!-- Icon representation -->
+    <g transform="translate(0, -60)">
+      <rect x="-36" y="-36" width="72" height="72" rx="36" fill="rgba(80, 196, 253, 0.1)" stroke="rgba(80, 196, 253, 0.3)" stroke-width="1.5" />
+      <path d="M -16 -8 L 0 -22 L 16 -8 L 16 16 L -16 16 Z" fill="none" stroke="#50c4fd" stroke-width="2" stroke-linejoin="round" />
+      <circle cx="0" cy="4" r="5" fill="#ca8a04" />
+    </g>
+
+    <text y="30" font-family="'Times New Roman', Times, serif" font-size="34" font-weight="bold" fill="#ffffff" letter-spacing="1">BUGMUN 2016 ARCHIVAL HOLDING</text>
+    <text y="70" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="16" font-weight="600" fill="#50c4fd" letter-spacing="2">HISTORICAL PHOTOGRAPHIC DOCUMENTATION PENDING DEPOSITORY ACCESS</text>
+
+    <text y="125" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" fill="#94a3b8" max-width="700">
+      <tspan x="0" dy="0">Documentary photographic records from the Second Assembly in Dhaka</tspan>
+      <tspan x="0" dy="24">are preserved in the institutional custody of the IABC BRAC University historical archives.</tspan>
+      <tspan x="0" dy="24">Authentic photographic plates will be mounted upon completion of retrospective cataloging.</tspan>
+    </text>
+  </g>
+
+  <!-- Bottom Archival Verification Metadata Bar -->
+  <g transform="translate(80, 680)">
+    <line x1="0" y1="0" x2="1040" y2="0" stroke="rgba(148, 163, 184, 0.2)" stroke-width="1" />
+    <text x="0" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" fill="#64748b" letter-spacing="1">ARCHIVE: BRAC UNIVERSITY IABC // SERVO 2016</text>
+    <text x="520" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="11" fill="#ca8a04" text-anchor="middle" font-weight="600">VERIFIED HISTORICAL NARRATIVE • SECOND ASSEMBLY</text>
+    <text x="1040" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, monospace" font-size="11" fill="#64748b" text-anchor="end" letter-spacing="1">STATUS: ARCHIVAL HOLDING</text>
+  </g>
+</svg>

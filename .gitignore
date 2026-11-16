@@ -31,3 +31,9 @@ Thumbs.db
 *.njsproj
 *.sln
 *.sw?
+
+# Raw reference archives and user-provided source drops
+Facebook's files/
+Facebook's files.zip
+reference-assets/
+
