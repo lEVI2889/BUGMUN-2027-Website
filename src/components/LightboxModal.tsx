@@ -18,7 +18,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
       window.addEventListener('keydown', handleKeyDown);
     }
     return () => {
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [plate, onClose]);
@@ -30,11 +30,70 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
       role="dialog"
       aria-modal="true"
       aria-labelledby="lightbox-title"
-      className="fixed inset-0 z-50 bg-primary/95 backdrop-blur-md flex flex-col items-center justify-center p-space-md animate-fadeIn"
+      className="fixed inset-0 z-50 bg-tertiary/95 backdrop-blur-xl flex flex-col p-4 sm:p-gutter justify-between animate-fadeIn"
       onClick={onClose}
     >
+      {/* =========================================================================
+          MOBILE LIGHTBOX VIEW (Approved Stitch Reference: Full-viewport, pt-safe, pb-safe)
+          ========================================================================= */}
       <div
-        className="relative max-w-4xl w-full bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl flex flex-col"
+        className="flex flex-col h-full justify-between lg:hidden w-full"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Top Header */}
+        <div className="flex items-center justify-between pt-safe">
+          <div className="flex flex-col text-on-tertiary">
+            <span className="font-label-protocol text-label-protocol text-secondary-container uppercase font-bold tracking-wider">
+              Historical Record Inspection
+            </span>
+            <span id="lightbox-title-mobile" className="font-title-md text-title-md font-bold text-white">
+              {plate.title}
+            </span>
+          </div>
+          <button
+            type="button"
+            id="lightbox-close-mobile"
+            className="w-10 h-10 rounded-full bg-surface-container-lowest/10 text-on-tertiary flex items-center justify-center hover:bg-surface-container-lowest/20 transition-colors"
+            onClick={onClose}
+            aria-label="Close modal"
+          >
+            <span className="material-symbols-outlined text-[20px]">close</span>
+          </button>
+        </div>
+
+        {/* Center Image */}
+        <div className="flex-1 flex items-center justify-center py-space-md">
+          <div className="relative w-full aspect-[4/3] max-h-[50vh] bg-tertiary-container rounded-xl overflow-hidden shadow-xl flex items-center justify-center">
+            <img
+              id="lightbox-img-mobile"
+              className="w-full h-full object-contain"
+              alt={plate.imageAlt}
+              src={plate.imageUrl}
+            />
+          </div>
+        </div>
+
+        {/* Bottom Details Card */}
+        <div className="pb-safe flex flex-col gap-space-xs text-on-tertiary bg-tertiary-container p-space-md rounded-xl shadow-lg">
+          <div className="flex items-center justify-between text-secondary-container">
+            <span id="lightbox-year-mobile" className="font-label-protocol text-label-protocol font-bold">
+              EDITION: {plate.year}
+            </span>
+            <span className="font-label-protocol text-label-protocol tracking-wider uppercase font-semibold">
+              IABC ARCHIVAL DEPOSITORY
+            </span>
+          </div>
+          <p id="lightbox-desc-mobile" className="font-body-sm text-body-sm text-on-tertiary-container leading-relaxed">
+            {plate.description}
+          </p>
+        </div>
+      </div>
+
+      {/* =========================================================================
+          DESKTOP LIGHTBOX VIEW (Approved Desktop Reference: Centered Modal Card)
+          ========================================================================= */}
+      <div
+        className="hidden lg:flex relative max-w-4xl w-full mx-auto my-auto bg-surface-container-lowest rounded-xl overflow-hidden shadow-2xl flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -56,8 +115,8 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
         </div>
 
         {/* Modal Content */}
-        <div className="p-space-lg flex flex-col md:flex-row gap-space-lg items-center">
-          <div className="w-full md:w-2/3 h-80 bg-surface-container rounded-lg overflow-hidden relative shadow-inner">
+        <div className="p-space-lg flex flex-row gap-space-lg items-center">
+          <div className="w-2/3 h-80 bg-surface-container rounded-lg overflow-hidden relative shadow-inner">
             <img
               id="lightbox-img"
               className="w-full h-full object-cover"
@@ -66,7 +125,7 @@ export const LightboxModal: React.FC<LightboxModalProps> = ({ plate, onClose }) 
             />
           </div>
 
-          <div className="w-full md:w-1/3 flex flex-col justify-between h-full">
+          <div className="w-1/3 flex flex-col justify-between h-full">
             <div>
               <span className="bg-secondary-fixed text-on-secondary-fixed font-label-protocol text-label-protocol px-2 py-0.5 rounded font-bold uppercase">
                 Archival Reference Plate • {plate.year}

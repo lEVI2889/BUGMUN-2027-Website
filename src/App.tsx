@@ -23,7 +23,7 @@ export const App: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col bg-surface text-on-surface">
       <Navbar />
-      <main className="w-full pt-20 bg-surface flex-1">
+      <main className="w-full pt-16 lg:pt-20 bg-surface flex-1">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/legacy" element={<LegacyPage />} />

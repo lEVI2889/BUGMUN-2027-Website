@@ -22,9 +22,98 @@ export const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col w-full">
       {/* =========================================================================
-          SECTION B: HERO SECTION
+          SECTION 1: HERO SECTION
+          Mobile: Approved Stitch Mobile Landing Page (Light surface, SVG watermark, mobile pills)
+          Desktop: Approved Desktop Hero (Deep primary blue, cartographic grid, 3-col ribbon)
           ========================================================================= */}
-      <section className="relative w-full overflow-hidden bg-primary text-on-primary">
+      <div id="hero-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE HERO (lg:hidden) */}
+        <section className="relative px-gutter py-space-xl flex flex-col gap-space-lg bg-surface lg:hidden">
+        {/* Atmospheric subtle grid watermark */}
+        <div className="absolute inset-0 pointer-events-none opacity-40 overflow-hidden flex items-center justify-center">
+          <svg className="w-full h-full text-surface-container-high" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="180" stroke="currentColor" strokeDasharray="4 4" strokeWidth="0.75"></circle>
+            <circle cx="200" cy="200" r="120" stroke="currentColor" strokeWidth="0.75"></circle>
+            <circle cx="200" cy="200" r="60" stroke="currentColor" strokeDasharray="2 4" strokeWidth="0.75"></circle>
+            <line stroke="currentColor" strokeWidth="0.5" x1="20" x2="380" y1="200" y2="200"></line>
+            <line stroke="currentColor" strokeWidth="0.5" x1="200" x2="200" y1="20" y2="380"></line>
+          </svg>
+        </div>
+
+        {/* Editorial Header Badges */}
+        <div className="relative z-10 flex flex-wrap items-center gap-space-xs">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary text-on-primary rounded-full font-label-protocol text-label-protocol uppercase tracking-wider shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-secondary-container animate-pulse"></span>
+            The Return of a Diplomatic Legacy • 5th Edition
+          </span>
+          <span className="px-2.5 py-1 bg-surface-container text-secondary font-label-protocol text-label-protocol uppercase rounded-full">
+            DHAKA PLENARY • 23.7772° N, 90.4243° E
+          </span>
+        </div>
+
+        {/* Main Headline & Narrative */}
+        <div className="relative z-10 flex flex-col gap-space-sm">
+          <h1 className="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold tracking-tight">
+            BRAC University Global Model United Nations 2027
+          </h1>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Reigniting South Asia's preeminent collegiate diplomatic forum. As geopolitical architectures evolve, BUGMUN 2027 convenes emerging global envoys to negotiate sovereign consensus, architect multilateral solutions, and confront the decisive challenges of our century.
+          </p>
+        </div>
+
+        {/* Primary & Secondary Mobile CTAs */}
+        <div className="relative z-10 flex flex-col gap-space-sm w-full">
+          <a
+            className="w-full h-12 bg-primary text-on-primary flex items-center justify-center gap-2 rounded-lg font-label-lg text-label-lg tracking-wide uppercase shadow-md active:scale-[0.99] transition-transform"
+            href="#committees-section"
+          >
+            <span>Explore BUGMUN 2027</span>
+            <span className="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+          <Link
+            to="/legacy"
+            className="w-full h-12 bg-surface-container-low text-primary flex items-center justify-center gap-2 rounded-lg font-label-lg text-label-lg tracking-wide uppercase active:scale-[0.99] transition-transform"
+          >
+            <span>Discover Our Legacy (2014–2020)</span>
+            <span className="material-symbols-outlined text-[18px]">history_edu</span>
+          </Link>
+        </div>
+
+        {/* Quick Metadata Dossier Cards (Compact Mobile Stack) */}
+        <div className="relative z-10 flex flex-col gap-space-sm pt-space-xs">
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-sm">
+            <div className="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
+              <span className="material-symbols-outlined text-[20px]">account_balance</span>
+            </div>
+            <div className="flex flex-col min-w-0">
+              <span className="font-label-protocol text-label-protocol text-secondary uppercase font-semibold">Summit Venue</span>
+              <span className="font-title-md text-title-md text-primary font-bold truncate">BRAC University Campus</span>
+              <span className="font-body-sm text-body-sm text-on-surface-variant">Kha 224 Pragati Sarani, Merul Badda, Dhaka 1212</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-space-sm">
+            <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+              <div className="flex items-center gap-1.5 text-secondary mb-1">
+                <span className="material-symbols-outlined text-[18px]">calendar_month</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-semibold">Convocation</span>
+              </div>
+              <span className="font-title-md text-title-md text-primary font-bold">Fall 2027</span>
+              <span className="font-body-sm text-body-sm text-on-surface-variant">Tentative • Dates TBA</span>
+            </div>
+            <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col justify-between">
+              <div className="flex items-center gap-1.5 text-secondary mb-1">
+                <span className="material-symbols-outlined text-[18px]">groups_3</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-semibold">Assembly</span>
+              </div>
+              <span className="font-title-md text-title-md text-primary font-bold">320 Delegates</span>
+              <span className="font-body-sm text-body-sm text-on-surface-variant">8 Specialized Chambers</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP HERO (hidden lg:block) */}
+      <section className="hidden lg:block relative w-full overflow-hidden bg-primary text-on-primary">
         {/* Ambient Diplomatic Underlay & Cartographic Grid */}
         <div className="absolute inset-0 pointer-events-none opacity-20">
           <svg className="w-full h-full object-cover" fill="none" viewBox="0 0 1440 900" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +148,7 @@ export const HomePage: React.FC = () => {
 
           {/* Main Headline Assembly */}
           <div className="max-w-4xl flex flex-col gap-6">
-            <h1 className="font-headline-lg text-headline-lg tracking-tight leading-tight text-surface-container-lowest">
+            <h1 className="font-headline-lg text-headline-lg tracking-tight leading-tight text-surface-container-lowest font-bold">
               BRAC University Global <br />
               <span className="italic font-display-hero text-display-hero text-secondary-container">
                 Model United Nations
@@ -95,7 +184,7 @@ export const HomePage: React.FC = () => {
 
           {/* Key Metadata Ribbon */}
           <div className="mt-16 bg-tertiary-container/90 backdrop-blur-md rounded-xl p-space-lg shadow-xl">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+            <div className="grid grid-cols-3 gap-6 items-center">
               <div className="flex items-start gap-space-md">
                 <div className="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center text-secondary-container shrink-0">
                   <span className="material-symbols-outlined text-[24px]">location_on</span>
@@ -155,23 +244,101 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
-          SECTION C: ABOUT BUGMUN 2027 & THE DIPLOMATIC RETURN
+          SECTION 2: ABOUT BUGMUN 2027 & THE DIPLOMATIC RETURN
+          Mobile: Approved Stitch Mobile Overview
+          Desktop: Approved Desktop Two-Column Layout
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface" id="about-legacy">
+      <div id="about-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE OVERVIEW (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+              ARTICLE I // INSTITUTIONAL BACKGROUND
+            </span>
+          </div>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Revitalizing Sovereign Dialogue After a Sabbatical of Historic Global Realignment
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant mt-1 leading-relaxed">
+            Established in 2014 under the aegis of the International Affairs &amp; Business Conference (IABC) at BRAC University, BUGMUN spearheaded pioneering diplomatic simulation across South Asia. Following an intentional sabbatical in 2020 amid sweeping international transformation, the 2027 assembly marks our monumental Fifth Edition—re-engineered for a complex multipolar era.
+          </p>
+        </div>
+
+        {/* Mobile Visual Accent: Deliberation Chamber Canvas */}
+        <div className="relative w-full h-48 rounded-xl overflow-hidden shadow-sm">
+          <img
+            className="w-full h-full object-cover"
+            alt="BUGMUN Deliberation Chamber"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWgiKcT7iyWg-y8YZsPpmt9DBJDWnZj9cKHNPuznBffPpsqYIWiNwR4PXCQHR7nbDgBy4Zxv1jAFN6Z3xKlpJuiAg4MCWk_SCzovoZqsn1H9mX0cAQmYkry9gIJU_YcjRzZC3OMgiiwX_gMTbtxtm3MlD_wh0qFuBtGVvIBsaRDit0wIKseo8R60yxuT-CvRUlJiptN8Zj3rz1NykeJNG_Ol_Iaa7a1eII23k8khQ"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-tertiary/80 via-tertiary/20 to-transparent flex items-end p-space-md">
+            <div className="flex items-center gap-2 text-on-tertiary">
+              <span className="material-symbols-outlined text-secondary-fixed text-[18px]">gavel</span>
+              <span className="font-label-protocol text-label-protocol uppercase tracking-wider text-on-tertiary font-semibold">
+                BRAC University Diplomatic Assembly • Historic 5th Cycle
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Compact 2x2 Stats Grid */}
+        <div className="grid grid-cols-2 gap-space-sm">
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+            <span className="font-display-hero-mobile text-display-hero-mobile text-primary font-bold leading-none">
+              05<span className="text-secondary text-headline-sm">th</span>
+            </span>
+            <span className="font-title-md text-title-md text-primary font-bold mt-1">Milestone Edition</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">Convocated since inaugural 2014 forum</span>
+          </div>
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+            <span className="font-display-hero-mobile text-display-hero-mobile text-primary font-bold leading-none">320</span>
+            <span className="font-title-md text-title-md text-primary font-bold mt-1">Plenary Capacity</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">International &amp; collegiate seats</span>
+          </div>
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+            <span className="font-display-hero-mobile text-display-hero-mobile text-primary font-bold leading-none">08</span>
+            <span className="font-title-md text-title-md text-primary font-bold mt-1">Chambers</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">Specialized multilateral councils</span>
+          </div>
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col">
+            <span className="font-display-hero-mobile text-display-hero-mobile text-primary font-bold leading-none">03</span>
+            <span className="font-title-md text-title-md text-primary font-bold mt-1">Diplomatic Days</span>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">Exhaustive debate, vetting &amp; gala</span>
+          </div>
+        </div>
+
+        {/* UN ROP Highlight Card */}
+        <div className="p-space-md rounded-xl bg-primary-container text-on-primary-container flex items-start gap-space-sm shadow-md">
+          <div className="w-10 h-10 rounded-lg bg-surface-tint/20 text-on-primary flex items-center justify-center flex-shrink-0">
+            <span className="material-symbols-outlined text-[22px]">verified</span>
+          </div>
+          <div className="flex flex-col">
+            <span className="font-title-md text-title-md text-on-primary font-bold">Standard UN Rules of Procedure</span>
+            <p className="font-body-sm text-body-sm text-on-primary-container mt-1 leading-relaxed">
+              Rigorous adherence to established United Nations General Assembly and Security Council protocol, administered by an accredited collegiate Secretariat.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP OVERVIEW (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
-          {/* Section Marker */}
           <div className="flex items-center gap-space-xs text-secondary mb-3">
             <span className="font-label-protocol text-label-protocol uppercase tracking-widest font-bold">
               Article I // Institutional Background
             </span>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+          <div className="grid grid-cols-12 gap-space-lg items-start">
             {/* Left Column: Editorial Discourse */}
-            <div className="lg:col-span-7 flex flex-col gap-6">
-              <h2 className="font-headline-md text-headline-md text-primary tracking-tight">
+            <div className="col-span-7 flex flex-col gap-6">
+              <h2 className="font-headline-md text-headline-md text-primary tracking-tight font-bold">
                 Revitalizing Sovereign Dialogue After a Sabbatical of Historic Global Realignment
               </h2>
               <p className="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
@@ -196,7 +363,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Right Column: Institutional Stats & Visual Artifact */}
-            <div className="lg:col-span-5 flex flex-col gap-6">
+            <div className="col-span-5 flex flex-col gap-6">
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between">
                   <span className="font-label-protocol text-label-protocol uppercase tracking-wider text-secondary font-bold">
@@ -266,11 +433,113 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
-          SECTION D: CONFERENCE VISION & SUSTAINABLE DEVELOPMENT GOALS (SDGS)
+          SECTION 3: CONFERENCE VISION & SUSTAINABLE DEVELOPMENT GOALS (SDGS)
+          Mobile: Approved Stitch Stacked SDG Cards with Color Accent Bars
+          Desktop: Approved Desktop 4-Column Grid
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface-container-low">
+      
+      {/* MOBILE SDGS (lg:hidden) */}
+      <section className="px-gutter py-space-xl bg-surface flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+              AGENDA 2030 // MULTILATERAL PILLARS
+            </span>
+          </div>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Anchored in the United Nations Sustainable Development Framework
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Every chamber draft, resolution preamble, and operative clause at BUGMUN 2027 directly intersects with the UN 2030 Agenda for Sustainable Development, empowering envoys to design practical interventions.
+          </p>
+        </div>
+
+        {/* 4 Stacked Mobile SDG Cards */}
+        <div className="flex flex-col gap-space-sm">
+          {/* SDG 7 */}
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md relative overflow-hidden">
+            <div className="w-1.5 absolute top-0 bottom-0 left-0 bg-[#FDB713]"></div>
+            <div className="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center flex-shrink-0 text-primary">
+              <span className="font-title-lg text-title-lg font-bold leading-none">07</span>
+              <span className="font-label-protocol text-label-protocol uppercase text-secondary font-bold">SDG</span>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5 text-secondary">
+                <span className="material-symbols-outlined text-[16px]">bolt</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-bold">Affordable &amp; Clean Energy</span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold mt-0.5">Energy Transitions in the Global South</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Accelerating equitable clean power distribution, grid resilience, and multilateral green financing frameworks across developing economies.
+              </p>
+            </div>
+          </div>
+
+          {/* SDG 8 */}
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md relative overflow-hidden">
+            <div className="w-1.5 absolute top-0 bottom-0 left-0 bg-[#A21942]"></div>
+            <div className="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center flex-shrink-0 text-primary">
+              <span className="font-title-lg text-title-lg font-bold leading-none">08</span>
+              <span className="font-label-protocol text-label-protocol uppercase text-secondary font-bold">SDG</span>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5 text-secondary">
+                <span className="material-symbols-outlined text-[16px]">work</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-bold">Decent Work &amp; Economic Growth</span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold mt-0.5">Youth Labor &amp; Automation Resilience</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Safeguarding worker rights, modernizing vocational architectures, and mitigating algorithmic disruption in South Asian markets.
+              </p>
+            </div>
+          </div>
+
+          {/* SDG 9 */}
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md relative overflow-hidden">
+            <div className="w-1.5 absolute top-0 bottom-0 left-0 bg-[#F36E25]"></div>
+            <div className="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center flex-shrink-0 text-primary">
+              <span className="font-title-lg text-title-lg font-bold leading-none">09</span>
+              <span className="font-label-protocol text-label-protocol uppercase text-secondary font-bold">SDG</span>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5 text-secondary">
+                <span className="material-symbols-outlined text-[16px]">precision_manufacturing</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-bold">Industry, Innovation &amp; Infrastructure</span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold mt-0.5">Frontier Tech &amp; Climate Corridors</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Setting global governance standards for AI infrastructure and building climate-resilient logistics corridors for cross-border trade.
+              </p>
+            </div>
+          </div>
+
+          {/* SDG 13 */}
+          <div className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex items-start gap-space-md relative overflow-hidden">
+            <div className="w-1.5 absolute top-0 bottom-0 left-0 bg-[#3F7E44]"></div>
+            <div className="w-12 h-12 rounded-lg bg-surface-container flex flex-col items-center justify-center flex-shrink-0 text-primary">
+              <span className="font-title-lg text-title-lg font-bold leading-none">13</span>
+              <span className="font-label-protocol text-label-protocol uppercase text-secondary font-bold">SDG</span>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-1.5 text-secondary">
+                <span className="material-symbols-outlined text-[16px]">public</span>
+                <span className="font-label-protocol text-label-protocol uppercase font-bold">Climate Action</span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold mt-0.5">Loss &amp; Damage Treaty Enforcement</h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-relaxed">
+                Catalyzing binding international mechanisms for frontline deltaic littoral zones and enforcing carbon balance standards.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP SDGS (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface-container-low">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="max-w-3xl mb-12">
             <div className="flex items-center gap-space-xs text-secondary mb-2">
@@ -279,7 +548,7 @@ export const HomePage: React.FC = () => {
                 Agenda 2030 // Multilateral Pillars
               </span>
             </div>
-            <h2 className="font-headline-md text-headline-md text-primary tracking-tight">
+            <h2 className="font-headline-md text-headline-md text-primary tracking-tight font-bold">
               Anchored in the United Nations Sustainable Development Framework
             </h2>
             <p className="font-body-lg text-body-lg text-on-surface-variant mt-3 leading-relaxed">
@@ -288,7 +557,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* 4 Pillars Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             {/* SDG 7 */}
             <div className="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow relative overflow-hidden group">
               <div className="absolute top-0 left-0 right-0 h-1.5 bg-amber-500"></div>
@@ -393,12 +662,69 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* =========================================================================
-          SECTION E: COMMITTEES (8 TENTATIVE COMMITTEES GRID)
+          SECTION 4: COMMITTEES (8 TENTATIVE COMMITTEES)
+          Mobile: Approved Stitch Touch Cards with Organ Badges & Status
+          Desktop: Approved Desktop 4-Column Committee Grid
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface" id="committees-section">
+      <div id="committees-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE COMMITTEES (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center justify-between">
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+              CHAMBERS OF DELIBERATION
+            </span>
+            <span className="px-2 py-0.5 bg-surface-container-highest text-on-surface-variant rounded font-label-protocol text-label-protocol font-semibold">
+              8 COUNCILS
+            </span>
+          </div>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Tentative Committees &amp; Specialized Councils
+          </h2>
+          <div className="inline-flex items-center gap-2 p-2 bg-secondary-fixed/50 rounded-lg text-on-secondary-fixed-variant mt-1">
+            <span className="material-symbols-outlined text-[16px]">campaign</span>
+            <span className="font-label-protocol text-label-protocol uppercase font-semibold">
+              Agendas &amp; Study Guides Forthcoming Early 2027
+            </span>
+          </div>
+        </div>
+
+        {/* 8 Sleek Mobile Committee Touch Cards */}
+        <div className="flex flex-col gap-space-sm">
+          {COMMITTEES_DATA.map((committee) => (
+            <div
+              key={committee.id}
+              className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-space-xs"
+            >
+              <div className="flex items-center justify-between">
+                <span className="font-label-protocol text-label-protocol text-secondary uppercase font-bold">
+                  {committee.organ}
+                </span>
+                <span className={`px-2 py-0.5 rounded-full font-label-protocol text-label-protocol font-bold ${
+                  committee.seats.includes('15') ? 'bg-primary text-on-primary' : 'bg-surface-container text-primary'
+                }`}>
+                  {committee.seats}
+                </span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold">
+                {committee.name} ({committee.acronym})
+              </h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                {committee.description}
+              </p>
+              <div className="pt-space-xs flex items-center justify-between text-outline font-label-protocol text-label-protocol border-t border-outline-variant/20 mt-1">
+                <span>{committee.agendaStatus}</span>
+                <span className="text-secondary font-medium">{committee.boardStatus}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP COMMITTEES (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
-          {/* Section Header with Notice */}
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-row items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
               <div className="flex items-center gap-space-xs text-secondary mb-2">
                 <span className="material-symbols-outlined text-[16px]">account_balance</span>
@@ -406,7 +732,7 @@ export const HomePage: React.FC = () => {
                   Chambers of Deliberation
                 </span>
               </div>
-              <h2 className="font-headline-md text-headline-md text-primary tracking-tight">
+              <h2 className="font-headline-md text-headline-md text-primary tracking-tight font-bold">
                 Tentative Committees &amp; Specialized Councils
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
@@ -422,7 +748,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* 8 Committee Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-4 gap-6">
             {COMMITTEES_DATA.map((committee) => (
               <div
                 key={committee.id}
@@ -463,11 +789,103 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
-          SECTION F: THREE-DAY CONFERENCE SCHEDULE
+          SECTION 5: THREE-DAY CONFERENCE SCHEDULE
+          Mobile: Approved Stitch Interactive Tabs & Chronological Mobile Cards
+          Desktop: Approved Desktop Timeline Pane & Horizontal Tabs
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface-container-low" id="schedule-section">
+      <div id="schedule-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE SCHEDULE (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-secondary"></span>
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+              SUMMIT CHRONOLOGY // 3-DAY SEQUENCE
+            </span>
+          </div>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Conference Program of Work
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Harmonized timeline crafted to deliver rigorous substantive debate, diplomatic consensus building, and memorable cross-border fellowship.
+          </p>
+        </div>
+
+        {/* Mobile Interactive Tab Switchers */}
+        <div className="grid grid-cols-3 gap-1 p-1 bg-surface-container rounded-xl" id="schedule-tabs">
+          <button
+            type="button"
+            className={`py-2.5 px-1 rounded-lg font-label-protocol text-label-protocol uppercase font-bold transition-all text-center ${
+              activeDay === 1
+                ? 'bg-surface-container-lowest text-primary shadow-sm'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            onClick={() => setActiveDay(1)}
+          >
+            Day 01<br />
+            <span className={`font-normal text-[10px] ${activeDay === 1 ? 'text-secondary' : ''}`}>Inauguration</span>
+          </button>
+          <button
+            type="button"
+            className={`py-2.5 px-1 rounded-lg font-label-protocol text-label-protocol uppercase font-bold transition-all text-center ${
+              activeDay === 2
+                ? 'bg-surface-container-lowest text-primary shadow-sm'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            onClick={() => setActiveDay(2)}
+          >
+            Day 02<br />
+            <span className={`font-normal text-[10px] ${activeDay === 2 ? 'text-secondary' : ''}`}>Caucuses</span>
+          </button>
+          <button
+            type="button"
+            className={`py-2.5 px-1 rounded-lg font-label-protocol text-label-protocol uppercase font-bold transition-all text-center ${
+              activeDay === 3
+                ? 'bg-surface-container-lowest text-primary shadow-sm'
+                : 'text-on-surface-variant hover:text-primary'
+            }`}
+            onClick={() => setActiveDay(3)}
+          >
+            Day 03<br />
+            <span className={`font-normal text-[10px] ${activeDay === 3 ? 'text-secondary' : ''}`}>Gala</span>
+          </button>
+        </div>
+
+        {/* Mobile Chronological Timeline Entries */}
+        <div className="flex flex-col gap-space-sm">
+          {currentSchedule.items.map((item, idx) => (
+            <div
+              key={idx}
+              className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-2 relative"
+            >
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-0.5 bg-primary text-on-primary rounded font-label-protocol text-label-protocol font-bold">
+                  {item.time}
+                </span>
+                <span className="font-label-protocol text-label-protocol text-secondary flex items-center gap-1 font-semibold">
+                  <span className="material-symbols-outlined text-[14px]">pin_drop</span>
+                  <span>{item.location}</span>
+                </span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold">
+                {item.title}
+              </h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                {item.description}
+              </p>
+              <span className="text-outline font-label-protocol text-label-protocol">
+                BRAC University Campus • Specialized Chamber Plenary
+              </span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* DESKTOP SCHEDULE (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface-container-low">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="max-w-2xl mb-10">
             <div className="flex items-center gap-space-xs text-secondary mb-2">
@@ -476,7 +894,7 @@ export const HomePage: React.FC = () => {
                 Summit Chronology // 3-Day Sequence
               </span>
             </div>
-            <h2 className="font-headline-md text-headline-md text-primary tracking-tight">
+            <h2 className="font-headline-md text-headline-md text-primary tracking-tight font-bold">
               Conference Program of Work
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
@@ -484,7 +902,7 @@ export const HomePage: React.FC = () => {
             </p>
           </div>
 
-          {/* Tab Buttons */}
+          {/* Desktop Tab Buttons */}
           <div className="flex flex-wrap items-center gap-2 mb-8 bg-surface-container p-1 rounded-lg w-fit">
             {SCHEDULE_DATA.map((day) => (
               <button
@@ -502,12 +920,12 @@ export const HomePage: React.FC = () => {
             ))}
           </div>
 
-          {/* Timeline Content Pane */}
+          {/* Desktop Timeline Content Pane */}
           <div className="flex flex-col gap-4">
             {currentSchedule.items.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6 hover:shadow-md transition-shadow"
+                className="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-row items-center justify-between gap-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex items-start gap-6">
                   <div className="font-label-lg text-label-lg text-secondary bg-secondary-fixed/30 px-3 py-1.5 rounded w-32 text-center shrink-0 font-bold">
@@ -531,13 +949,86 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
-          SECTION G: NEWS & LATEST FROM BUGMUN
+          SECTION 6: NEWS & LATEST FROM BUGMUN
+          Mobile: Approved Stitch Vertically Stacked Bulletins & FB Banner Card
+          Desktop: Approved Desktop 3-Column News Cards
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface" id="news-section">
+      <div id="news-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE NEWS (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
+        <div className="flex flex-col gap-space-xs">
+          <div className="flex items-center justify-between">
+            <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
+              OFFICIAL DISPATCHES
+            </span>
+            <a className="text-secondary font-label-protocol text-label-protocol flex items-center gap-1 hover:underline font-semibold" href="https://facebook.com" rel="noopener noreferrer" target="_blank">
+              <span>@BUGMUNofficial</span>
+              <span className="material-symbols-outlined text-[14px]">open_in_new</span>
+            </a>
+          </div>
+          <h2 className="font-headline-sm text-headline-sm text-primary font-bold">
+            Latest Bulletins &amp; Updates
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Keep abreast of official directives, executive timeline releases, and campus logistical milestones.
+          </p>
+        </div>
+
+        {/* 3 Vertically Stacked Mobile Announcement Cards */}
+        <div className="flex flex-col gap-space-sm">
+          {NEWS_DATA.map((news) => (
+            <div
+              key={news.id}
+              className="p-space-md rounded-xl bg-surface-container-lowest shadow-sm flex flex-col gap-1.5"
+            >
+              <div className="flex items-center justify-between">
+                <span className="px-2 py-0.5 bg-surface-container text-secondary rounded font-label-protocol text-label-protocol font-bold">
+                  {news.tag}
+                </span>
+                <span className="font-label-protocol text-label-protocol text-outline font-semibold">
+                  {news.date}
+                </span>
+              </div>
+              <h3 className="font-title-md text-title-md text-primary font-bold">
+                {news.title}
+              </h3>
+              <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                {news.description}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Facebook Community Banner Card */}
+        <div className="p-space-md rounded-xl bg-surface-container flex flex-col gap-space-sm">
+          <div className="flex items-center gap-space-sm">
+            <div className="w-10 h-10 rounded-lg bg-[#1877F2] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+              <span className="material-symbols-outlined text-[22px]">public</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-title-md text-title-md text-primary font-bold">Connect with the Secretariat Feed</span>
+              <span className="font-body-sm text-body-sm text-on-surface-variant">Live updates, alumni reflections, and behind-the-scenes notices</span>
+            </div>
+          </div>
+          <a
+            className="w-full h-11 bg-primary text-on-primary rounded-lg flex items-center justify-center gap-2 font-label-protocol text-label-protocol uppercase tracking-wider shadow-sm hover:bg-tertiary transition-colors font-bold"
+            href="https://facebook.com"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <span>Join Facebook Community</span>
+            <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+          </a>
+        </div>
+      </section>
+
+      {/* DESKTOP NEWS (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div className="flex flex-row items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
               <div className="flex items-center gap-space-xs text-secondary mb-2">
                 <span className="material-symbols-outlined text-[16px]">feed</span>
@@ -545,7 +1036,7 @@ export const HomePage: React.FC = () => {
                   Official Dispatches
                 </span>
               </div>
-              <h2 className="font-headline-md text-headline-md text-primary tracking-tight">
+              <h2 className="font-headline-md text-headline-md text-primary tracking-tight font-bold">
                 Latest Bulletins &amp; Updates
               </h2>
               <p className="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
@@ -566,7 +1057,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* News Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-3 gap-6">
             {NEWS_DATA.map((news) => (
               <div
                 key={news.id}
@@ -611,7 +1102,7 @@ export const HomePage: React.FC = () => {
           </div>
 
           {/* Social Media Connect Banner */}
-          <div className="mt-12 bg-primary text-on-primary rounded-xl p-space-lg flex flex-col md:flex-row items-center justify-between gap-6 shadow-md">
+          <div className="mt-12 bg-primary text-on-primary rounded-xl p-space-lg flex flex-row items-center justify-between gap-6 shadow-md">
             <div className="flex items-center gap-space-md">
               <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-on-secondary shrink-0">
                 <span className="material-symbols-outlined text-[24px]">forum</span>
@@ -636,11 +1127,86 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
-          SECTION H: PARTICIPATION CALL-TO-ACTION & EARLY ACCESS
+          SECTION 7: PARTICIPATION CALL-TO-ACTION & EARLY ACCESS
+          Mobile: Approved Stitch Card with Glowing Backdrop & Safe Spacing
+          Desktop: Approved Desktop Full-Width Card
           ========================================================================= */}
-      <section className="w-full py-space-xl bg-surface-container-high relative overflow-hidden" id="register-section">
+      <div id="register-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE REGISTRATION CTA (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface flex flex-col lg:hidden">
+        <div className="relative w-full rounded-2xl bg-tertiary text-on-tertiary p-space-lg flex flex-col gap-space-md overflow-hidden shadow-xl">
+          {/* Glow ambient decorative backdrop */}
+          <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
+          <div className="absolute -bottom-16 -left-16 w-48 h-48 rounded-full bg-primary-container/30 blur-3xl pointer-events-none"></div>
+
+          <div className="relative z-10 flex flex-col gap-space-xs">
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-secondary-container"></span>
+              <span className="font-label-protocol text-label-protocol text-secondary-container uppercase tracking-widest font-bold">
+                DELEGATE ENROLMENT NOTIFICATION
+              </span>
+            </div>
+            <h2 className="font-headline-sm text-headline-sm text-on-tertiary font-bold tracking-tight">
+              Shape Global Statecraft. Be Part of BUGMUN 2027.
+            </h2>
+            <p className="font-body-sm text-body-sm text-on-tertiary-container mt-1 leading-relaxed">
+              Delegate applications and chamber allocations will unlock in designated phases. Register your primary institutional email to receive priority notice and study guide releases.
+            </p>
+          </div>
+
+          {/* Mobile Email Input Form */}
+          <form className="relative z-10 flex flex-col gap-space-xs mt-1" onSubmit={handleNotifySubmit}>
+            <div className="flex flex-col gap-1">
+              <label className="font-label-protocol text-label-protocol text-tertiary-fixed uppercase font-semibold" htmlFor="registry-email-mobile">
+                Official / Academic Email
+              </label>
+              <input
+                className="w-full h-12 px-space-md rounded-lg bg-tertiary-container text-on-tertiary placeholder:text-on-tertiary-container/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container border-0"
+                id="registry-email-mobile"
+                placeholder="delegate@institution.edu"
+                required
+                type="email"
+                value={emailInput}
+                onChange={(e) => setEmailInput(e.target.value)}
+              />
+            </div>
+            <button
+              className="w-full h-12 mt-1 bg-secondary-container text-on-secondary-container font-label-lg text-label-lg tracking-wide uppercase rounded-lg font-bold flex items-center justify-center gap-2 shadow-md active:scale-[0.99] transition-transform cursor-pointer"
+              type="submit"
+            >
+              <span>Notify Me When Open</span>
+              <span className="material-symbols-outlined text-[18px]">send</span>
+            </button>
+            {notifySuccess && (
+              <span className="text-center font-label-protocol text-label-protocol text-secondary-fixed mt-1 block animate-fadeIn font-semibold" id="registry-status">
+                Diplomatic transmission recorded. You will be alerted upon portal activation.
+              </span>
+            )}
+          </form>
+
+          {/* Protocol Metrics Strip */}
+          <div className="relative z-10 grid grid-cols-3 gap-2 pt-space-md mt-space-xs border-t border-surface-container-highest/10 text-center">
+            <div className="flex flex-col">
+              <span className="font-title-md text-title-md text-on-tertiary font-bold">320</span>
+              <span className="font-label-protocol text-[9px] text-on-tertiary-container uppercase tracking-wider">Target Quorum</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-title-md text-title-md text-on-tertiary font-bold">IABC</span>
+              <span className="font-label-protocol text-[9px] text-on-tertiary-container uppercase tracking-wider">Host Secretariat</span>
+            </div>
+            <div className="flex flex-col">
+              <span className="font-title-md text-title-md text-on-tertiary font-bold">Dhaka</span>
+              <span className="font-label-protocol text-[9px] text-on-tertiary-container uppercase tracking-wider">Jurisdiction</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* DESKTOP REGISTRATION CTA (hidden lg:block) */}
+      <section className="hidden lg:block w-full py-space-xl bg-surface-container-high relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="bg-primary rounded-2xl p-space-xl md:p-16 text-on-primary relative overflow-hidden shadow-xl">
             {/* Decorative subtle SVG seal background */}
@@ -659,7 +1225,7 @@ export const HomePage: React.FC = () => {
                   Registration Cycle 2027
                 </span>
               </div>
-              <h2 className="font-headline-lg text-headline-lg text-surface-container-lowest tracking-tight">
+              <h2 className="font-headline-lg text-headline-lg text-surface-container-lowest tracking-tight font-bold">
                 Shape Global Statecraft. <br />
                 <span className="italic text-secondary-container">Be Part of BUGMUN 2027.</span>
               </h2>
@@ -672,7 +1238,7 @@ export const HomePage: React.FC = () => {
                 <p className="font-label-md text-label-md text-tertiary-fixed uppercase tracking-wider mb-2 font-semibold">
                   Priority Notification Registry
                 </p>
-                <form className="flex flex-col sm:flex-row gap-3" onSubmit={handleNotifySubmit}>
+                <form className="flex flex-row gap-3" onSubmit={handleNotifySubmit}>
                   <input
                     className="bg-surface-container-lowest text-on-surface px-4 py-3.5 rounded-lg flex-1 font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container placeholder:text-on-surface-variant/70 shadow-sm"
                     placeholder="Enter institutional or delegate email"
@@ -700,9 +1266,9 @@ export const HomePage: React.FC = () => {
               </div>
 
               {/* Fast Institutional Meta */}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6 border-t border-outline/20">
+              <div className="grid grid-cols-3 gap-4 pt-6 border-t border-outline/20">
                 <div>
-                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider">
+                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider font-semibold">
                     Target Quorum
                   </span>
                   <p className="font-title-md text-title-md text-surface-container-lowest mt-0.5 font-bold">
@@ -710,7 +1276,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider">
+                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider font-semibold">
                     Host Organizer
                   </span>
                   <p className="font-title-md text-title-md text-surface-container-lowest mt-0.5 font-bold">
@@ -718,7 +1284,7 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
                 <div>
-                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider">
+                  <span className="font-label-protocol text-label-protocol text-tertiary-fixed-dim uppercase tracking-wider font-semibold">
                     Jurisdiction
                   </span>
                   <p className="font-title-md text-title-md text-surface-container-lowest mt-0.5 font-bold">
@@ -731,5 +1297,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
     </div>
+  </div>
   );
 };
