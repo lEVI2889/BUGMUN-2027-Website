@@ -725,9 +725,9 @@ export const LegacyPage: React.FC = () => {
           Mobile: Approved Stitch 2-Column Photo Grid & Horizontal Filter Bar
           Desktop: Approved Desktop 4-Column Grid & Curatorial Notice
           ========================================================================= */}
-
-      {/* MOBILE GALLERY (lg:hidden) */}
-      <section className="px-gutter pt-space-xl flex flex-col gap-space-md lg:hidden" id="gallery-section">
+      <div id="gallery-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE GALLERY (lg:hidden) */}
+        <section className="px-gutter pt-space-xl flex flex-col gap-space-md lg:hidden">
         <div className="flex flex-col gap-space-xs">
           <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
             CURATED RETROSPECTIVE
@@ -799,7 +799,7 @@ export const LegacyPage: React.FC = () => {
       </section>
 
       {/* DESKTOP GALLERY (hidden lg:block) */}
-      <section className="hidden lg:block w-full bg-surface-container-low py-space-xl" id="gallery-section-desktop">
+      <section className="hidden lg:block w-full bg-surface-container-low py-space-xl">
         <div className="max-w-[1240px] mx-auto px-margin">
           {/* Section Header & Filter Tabs */}
           <div className="flex flex-row items-end justify-between gap-space-md mb-space-lg">
@@ -891,6 +891,7 @@ export const LegacyPage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 5: THE RETURN: BUGMUN 2027 ("THE LEGACY CONTINUES")

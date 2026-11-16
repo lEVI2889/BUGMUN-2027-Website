@@ -26,9 +26,9 @@ export const HomePage: React.FC = () => {
           Mobile: Approved Stitch Mobile Landing Page (Light surface, SVG watermark, mobile pills)
           Desktop: Approved Desktop Hero (Deep primary blue, cartographic grid, 3-col ribbon)
           ========================================================================= */}
-      
-      {/* MOBILE HERO (lg:hidden) */}
-      <section id="hero-section" className="relative px-gutter py-space-xl flex flex-col gap-space-lg bg-surface lg:hidden">
+      <div id="hero-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE HERO (lg:hidden) */}
+        <section className="relative px-gutter py-space-xl flex flex-col gap-space-lg bg-surface lg:hidden">
         {/* Atmospheric subtle grid watermark */}
         <div className="absolute inset-0 pointer-events-none opacity-40 overflow-hidden flex items-center justify-center">
           <svg className="w-full h-full text-surface-container-high" fill="none" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
@@ -244,15 +244,16 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 2: ABOUT BUGMUN 2027 & THE DIPLOMATIC RETURN
-          Mobile: Approved Stitch Mobile Overview (id="about-section")
-          Desktop: Approved Desktop Two-Column Layout (id="about-legacy")
+          Mobile: Approved Stitch Mobile Overview
+          Desktop: Approved Desktop Two-Column Layout
           ========================================================================= */}
-      
-      {/* MOBILE OVERVIEW (lg:hidden) */}
-      <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden" id="about-section">
+      <div id="about-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE OVERVIEW (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -326,7 +327,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* DESKTOP OVERVIEW (hidden lg:block) */}
-      <section className="hidden lg:block w-full py-space-xl bg-surface" id="about-legacy">
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="flex items-center gap-space-xs text-secondary mb-3">
             <span className="font-label-protocol text-label-protocol uppercase tracking-widest font-bold">
@@ -432,6 +433,7 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 3: CONFERENCE VISION & SUSTAINABLE DEVELOPMENT GOALS (SDGS)
@@ -664,9 +666,9 @@ export const HomePage: React.FC = () => {
           Mobile: Approved Stitch Touch Cards with Organ Badges & Status
           Desktop: Approved Desktop 4-Column Committee Grid
           ========================================================================= */}
-      
-      {/* MOBILE COMMITTEES (lg:hidden) */}
-      <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden" id="committees-section">
+      <div id="committees-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE COMMITTEES (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center justify-between">
             <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
@@ -720,7 +722,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* DESKTOP COMMITTEES (hidden lg:block) */}
-      <section className="hidden lg:block w-full py-space-xl bg-surface" id="committees-section-desktop">
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="flex flex-row items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
@@ -787,15 +789,16 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 5: THREE-DAY CONFERENCE SCHEDULE
           Mobile: Approved Stitch Interactive Tabs & Chronological Mobile Cards
           Desktop: Approved Desktop Timeline Pane & Horizontal Tabs
           ========================================================================= */}
-      
-      {/* MOBILE SCHEDULE (lg:hidden) */}
-      <section className="px-gutter py-space-xl bg-surface flex flex-col gap-space-lg lg:hidden" id="schedule-section">
+      <div id="schedule-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE SCHEDULE (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface flex flex-col gap-space-lg lg:hidden">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-secondary"></span>
@@ -882,7 +885,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* DESKTOP SCHEDULE (hidden lg:block) */}
-      <section className="hidden lg:block w-full py-space-xl bg-surface-container-low" id="schedule-section-desktop">
+      <section className="hidden lg:block w-full py-space-xl bg-surface-container-low">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="max-w-2xl mb-10">
             <div className="flex items-center gap-space-xs text-secondary mb-2">
@@ -946,15 +949,16 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 6: NEWS & LATEST FROM BUGMUN
           Mobile: Approved Stitch Vertically Stacked Bulletins & FB Banner Card
           Desktop: Approved Desktop 3-Column News Cards
           ========================================================================= */}
-      
-      {/* MOBILE NEWS (lg:hidden) */}
-      <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden" id="news-section">
+      <div id="news-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE NEWS (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface-container-low flex flex-col gap-space-lg lg:hidden">
         <div className="flex flex-col gap-space-xs">
           <div className="flex items-center justify-between">
             <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
@@ -1022,7 +1026,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* DESKTOP NEWS (hidden lg:block) */}
-      <section className="hidden lg:block w-full py-space-xl bg-surface" id="news-section-desktop">
+      <section className="hidden lg:block w-full py-space-xl bg-surface">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="flex flex-row items-end justify-between gap-6 mb-12">
             <div className="max-w-2xl">
@@ -1123,15 +1127,16 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
       </section>
+    </div>
 
       {/* =========================================================================
           SECTION 7: PARTICIPATION CALL-TO-ACTION & EARLY ACCESS
           Mobile: Approved Stitch Card with Glowing Backdrop & Safe Spacing
           Desktop: Approved Desktop Full-Width Card
           ========================================================================= */}
-      
-      {/* MOBILE REGISTRATION CTA (lg:hidden) */}
-      <section className="px-gutter py-space-xl bg-surface flex flex-col lg:hidden" id="register-section">
+      <div id="register-section" className="w-full scroll-mt-16 lg:scroll-mt-20">
+        {/* MOBILE REGISTRATION CTA (lg:hidden) */}
+        <section className="px-gutter py-space-xl bg-surface flex flex-col lg:hidden">
         <div className="relative w-full rounded-2xl bg-tertiary text-on-tertiary p-space-lg flex flex-col gap-space-md overflow-hidden shadow-xl">
           {/* Glow ambient decorative backdrop */}
           <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full bg-secondary-container/20 blur-3xl pointer-events-none"></div>
@@ -1201,7 +1206,7 @@ export const HomePage: React.FC = () => {
       </section>
 
       {/* DESKTOP REGISTRATION CTA (hidden lg:block) */}
-      <section className="hidden lg:block w-full py-space-xl bg-surface-container-high relative overflow-hidden" id="register-section-desktop">
+      <section className="hidden lg:block w-full py-space-xl bg-surface-container-high relative overflow-hidden">
         <div className="max-w-[1240px] mx-auto px-margin">
           <div className="bg-primary rounded-2xl p-space-xl md:p-16 text-on-primary relative overflow-hidden shadow-xl">
             {/* Decorative subtle SVG seal background */}
@@ -1292,5 +1297,6 @@ export const HomePage: React.FC = () => {
         </div>
       </section>
     </div>
+  </div>
   );
 };
