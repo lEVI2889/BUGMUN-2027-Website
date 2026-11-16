@@ -520,11 +520,11 @@ export const LegacyPage: React.FC = () => {
           SECTION 3: CHRONOLOGICAL TIMELINE (4 LANDMARK ASSEMBLIES)
           Mobile: Approved Stitch Single-Column Stacked Dossier Articles
           Desktop: Approved Desktop Alternating Visual/Text Cards
+          Canonical milestone wrappers with responsive scroll-margin
           ========================================================================= */}
-
-      {/* MOBILE DOSSIER (lg:hidden) */}
-      <section className="px-gutter pt-space-xl flex flex-col gap-space-lg lg:hidden">
-        <div className="flex flex-col gap-space-xs">
+      <section className="w-full bg-surface py-space-xl">
+        {/* Mobile Header (lg:hidden) */}
+        <div className="px-gutter flex flex-col gap-space-xs lg:hidden mb-space-lg">
           <span className="font-label-protocol text-label-protocol text-secondary uppercase tracking-widest font-bold">
             ARCHIVAL DOSSIER
           </span>
@@ -536,110 +536,102 @@ export const LegacyPage: React.FC = () => {
           </p>
         </div>
 
-        {/* 4 Stacked Edition Articles */}
-        <div className="flex flex-col gap-space-lg">
-          {MILESTONES_DATA.map((milestone) => (
-            <article
-              key={milestone.year}
-              id={`edition-${milestone.year}`}
-              className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md border border-outline-variant/30"
-            >
-              <div className="flex flex-col gap-space-xs">
-                <div className="flex items-center justify-between">
-                  <span className="font-label-protocol text-label-protocol bg-secondary-container/20 text-on-secondary-container font-bold px-2 py-0.5 rounded-full uppercase">
-                    {milestone.badge}
-                  </span>
-                  <span className="font-label-protocol text-label-protocol text-outline uppercase font-semibold">
-                    {milestone.subtitle}
-                  </span>
-                </div>
-                <h3 className="font-headline-sm text-headline-sm text-primary font-bold">
-                  {milestone.theme}
-                </h3>
-                <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                  {milestone.narrative}
-                </p>
-              </div>
+        {/* Desktop Header (hidden lg:block) */}
+        <div className="hidden lg:block text-center max-w-2xl mx-auto mb-space-xl">
+          <span className="font-label-protocol text-label-protocol uppercase tracking-[0.2em] text-secondary font-bold block mb-1">
+            Archival Chronology
+          </span>
+          <h2 className="font-headline-lg text-headline-lg text-primary font-serif font-bold">
+            The Four Landmark Assemblies
+          </h2>
+          <p className="font-body-md text-body-md text-on-surface-variant mt-2">
+            An exhaustive survey of the four historic sessions that defined international collegiate diplomacy at BRAC University.
+          </p>
+        </div>
 
-              {/* Badges */}
-              <div className="flex flex-wrap gap-space-xs">
-                {milestone.metrics.map((m, mIdx) => (
-                  <span
-                    key={mIdx}
-                    className="bg-surface-container px-2.5 py-1 rounded-md font-label-protocol text-label-protocol text-primary font-semibold"
-                  >
-                    {m.label}: {m.value}
-                  </span>
-                ))}
-              </div>
-
-              {/* Photo Showcase (Stacked) */}
-              <div className="flex flex-col gap-space-sm pt-space-xs">
-                <div className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
-                  <img
-                    className="w-full aspect-[16/10] object-cover"
-                    alt={milestone.mainPhoto.alt}
-                    src={milestone.mainPhoto.url}
-                    loading="lazy"
-                  />
-                  <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
-                    <span className="font-body-sm text-body-sm text-primary font-medium">
-                      {milestone.mainPhoto.caption}
-                    </span>
-                    <span className="font-label-protocol text-label-protocol text-outline font-semibold">
-                      PLATE {milestone.year.slice(2)}-A
-                    </span>
-                  </div>
-                </div>
-
-                {milestone.subPhotos.slice(0, 1).map((sub, sIdx) => (
-                  <div key={sIdx} className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
-                    <img
-                      className="w-full aspect-[16/10] object-cover"
-                      alt={sub.alt}
-                      src={sub.url}
-                      loading="lazy"
-                    />
-                    <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
-                      <span className="font-body-sm text-body-sm text-primary font-medium">
-                        {sub.caption}
+        {/* Canonical Milestone Containers (Wraps both responsive presentations) */}
+        <div className="max-w-[1240px] mx-auto px-gutter lg:px-margin flex flex-col gap-space-lg lg:space-y-space-xl">
+          {MILESTONES_DATA.map((milestone, idx) => {
+            const isEven = idx % 2 === 1;
+            return (
+              <div
+                key={milestone.year}
+                id={`edition-${milestone.year}`}
+                className="w-full scroll-mt-16 lg:scroll-mt-20"
+              >
+                {/* Mobile Milestone Card (lg:hidden) */}
+                <article className="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col gap-space-md border border-outline-variant/30 lg:hidden">
+                  <div className="flex flex-col gap-space-xs">
+                    <div className="flex items-center justify-between">
+                      <span className="font-label-protocol text-label-protocol bg-secondary-container/20 text-on-secondary-container font-bold px-2 py-0.5 rounded-full uppercase">
+                        {milestone.badge}
                       </span>
-                      <span className="font-label-protocol text-label-protocol text-outline font-semibold">
-                        PLATE {milestone.year.slice(2)}-B
+                      <span className="font-label-protocol text-label-protocol text-outline uppercase font-semibold">
+                        {milestone.subtitle}
                       </span>
                     </div>
+                    <h3 className="font-headline-sm text-headline-sm text-primary font-bold">
+                      {milestone.theme}
+                    </h3>
+                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+                      {milestone.narrative}
+                    </p>
                   </div>
-                ))}
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
-      {/* DESKTOP DOSSIER (hidden lg:block) */}
-      <section className="hidden lg:block w-full bg-surface py-space-xl">
-        <div className="max-w-[1240px] mx-auto px-margin">
-          <div className="text-center max-w-2xl mx-auto mb-space-xl">
-            <span className="font-label-protocol text-label-protocol uppercase tracking-[0.2em] text-secondary font-bold block mb-1">
-              Archival Chronology
-            </span>
-            <h2 className="font-headline-lg text-headline-lg text-primary font-serif font-bold">
-              The Four Landmark Assemblies
-            </h2>
-            <p className="font-body-md text-body-md text-on-surface-variant mt-2">
-              An exhaustive survey of the four historic sessions that defined international collegiate diplomacy at BRAC University.
-            </p>
-          </div>
+                  {/* Badges */}
+                  <div className="flex flex-wrap gap-space-xs">
+                    {milestone.metrics.map((m, mIdx) => (
+                      <span
+                        key={mIdx}
+                        className="bg-surface-container px-2.5 py-1 rounded-md font-label-protocol text-label-protocol text-primary font-semibold"
+                      >
+                        {m.label}: {m.value}
+                      </span>
+                    ))}
+                  </div>
 
-          <div className="space-y-space-xl">
-            {MILESTONES_DATA.map((milestone, idx) => {
-              const isEven = idx % 2 === 1;
-              return (
-                <article
-                  key={milestone.year}
-                  id={`edition-${milestone.year}-desktop`}
-                  className="bg-surface-container-lowest rounded-xl shadow-md p-space-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-outline-variant/30"
-                >
+                  {/* Photo Showcase (Stacked) */}
+                  <div className="flex flex-col gap-space-sm pt-space-xs">
+                    <div className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
+                      <img
+                        className="w-full aspect-[16/10] object-cover"
+                        alt={milestone.mainPhoto.alt}
+                        src={milestone.mainPhoto.url}
+                        loading="lazy"
+                      />
+                      <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
+                        <span className="font-body-sm text-body-sm text-primary font-medium">
+                          {milestone.mainPhoto.caption}
+                        </span>
+                        <span className="font-label-protocol text-label-protocol text-outline font-semibold">
+                          PLATE {milestone.year.slice(2)}-A
+                        </span>
+                      </div>
+                    </div>
+
+                    {milestone.subPhotos.slice(0, 1).map((sub, sIdx) => (
+                      <div key={sIdx} className="rounded-lg overflow-hidden bg-surface-container shadow-sm">
+                        <img
+                          className="w-full aspect-[16/10] object-cover"
+                          alt={sub.alt}
+                          src={sub.url}
+                          loading="lazy"
+                        />
+                        <div className="p-2.5 bg-surface-container-low flex items-center justify-between">
+                          <span className="font-body-sm text-body-sm text-primary font-medium">
+                            {sub.caption}
+                          </span>
+                          <span className="font-label-protocol text-label-protocol text-outline font-semibold">
+                            PLATE {milestone.year.slice(2)}-B
+                          </span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </article>
+
+                {/* Desktop Milestone Card (hidden lg:block) */}
+                <article className="hidden lg:block bg-surface-container-lowest rounded-xl shadow-md p-space-lg overflow-hidden transition-all duration-300 hover:shadow-xl border border-outline-variant/30">
                   <div className="grid grid-cols-12 gap-gutter items-center">
                     {/* Visual Showcase */}
                     <div
@@ -729,9 +721,9 @@ export const LegacyPage: React.FC = () => {
                     </div>
                   </div>
                 </article>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </section>
 

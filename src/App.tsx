@@ -9,15 +9,39 @@ export const App: React.FC = () => {
   const { pathname, hash } = useLocation();
 
   useEffect(() => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
     if (hash) {
       const id = hash.replace('#', '');
-      const element = document.getElementById(id);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+      if (id === 'hero-section' || id === 'top') {
+        window.scrollTo({ top: 0, behavior: scrollBehavior });
         return;
       }
+
+      let attempts = 0;
+      const maxAttempts = 10;
+      let timerId: ReturnType<typeof setTimeout>;
+
+      const scrollToTarget = () => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: scrollBehavior });
+        } else if (attempts < maxAttempts) {
+          attempts++;
+          timerId = setTimeout(scrollToTarget, 50);
+        }
+      };
+
+      scrollToTarget();
+
+      return () => {
+        clearTimeout(timerId);
+      };
+    } else {
+      // Instant reset on route transition without hash
+      window.scrollTo({ top: 0, behavior: 'instant' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [pathname, hash]);
 
   return (

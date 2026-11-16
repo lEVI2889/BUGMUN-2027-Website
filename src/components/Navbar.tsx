@@ -14,7 +14,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
   const isHome = location.pathname === '/' || location.pathname === '';
   const isLegacy = location.pathname === '/legacy';
 
-  // Handle escape key and body overflow when mobile drawer is open
+  // Handle escape key, resize, and body overflow when mobile drawer is open
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && mobileMenuOpen) {
@@ -22,9 +22,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
       }
     };
 
+    const handleResize = () => {
+      if (window.innerWidth >= 1024 && mobileMenuOpen) {
+        setMobileMenuOpen(false);
+      }
+    };
+
     if (mobileMenuOpen) {
       document.body.style.overflow = 'hidden';
       window.addEventListener('keydown', handleKeyDown);
+      window.addEventListener('resize', handleResize);
     } else {
       document.body.style.overflow = '';
     }
@@ -32,6 +39,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
     return () => {
       document.body.style.overflow = '';
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('resize', handleResize);
     };
   }, [mobileMenuOpen]);
 
@@ -40,22 +48,19 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
     if (navTag) {
       setActiveSection(navTag);
     }
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const scrollBehavior = prefersReducedMotion ? 'auto' : 'smooth';
+
     if (!isHome) {
       navigate('/#' + sectionId);
-      setTimeout(() => {
-        if (sectionId === 'hero-section') {
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        } else {
-          const el = document.getElementById(sectionId);
-          if (el) el.scrollIntoView({ behavior: 'smooth' });
-        }
-      }, 100);
     } else {
       if (sectionId === 'hero-section') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: scrollBehavior });
       } else {
         const el = document.getElementById(sectionId);
-        if (el) el.scrollIntoView({ behavior: 'smooth' });
+        if (el) {
+          el.scrollIntoView({ behavior: scrollBehavior });
+        }
       }
     }
   };
@@ -196,7 +201,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onRegisterClick }) => {
         role="dialog"
         aria-modal="true"
         aria-label="Diplomatic Navigation Drawer"
-        className={`fixed inset-0 z-50 bg-surface flex flex-col p-gutter pb-safe pt-safe overflow-y-auto lg:hidden transition-transform duration-300 ease-out ${
+        className={`fixed inset-0 z-50 bg-surface flex flex-col p-gutter pb-safe pt-safe overflow-y-auto overscroll-contain lg:hidden transition-transform duration-300 ease-out ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         }`}
       >
